@@ -39,8 +39,8 @@ class ad_announce {
 			$this->ifthd->skin->error('news_disabled');
 		}
 		
-		$this->ifthd->skin->set_section( 'Announcement Control' );		
-		$this->ifthd->skin->set_description( 'Manage your current announcements, create new announcements and bulk email.' );
+		$this->ifthd->skin->set_section( 'Управление Новостями' );		
+		$this->ifthd->skin->set_description( 'Управление текущими новостями, создание новостей и электронных писем.' );
 
 		switch( $this->ifthd->input['code'] )
     	{
@@ -105,16 +105,16 @@ class ad_announce {
 		if ( $order == 'DESC' )
 		{
 			$$order_var = "&amp;order=asc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='DOWN' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='Вниз' />";
 		}
 		else
 		{
 			$$order_var = "&amp;order=desc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='UP' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='Вверх' />";
 		}
 
 		$link_id = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=list&amp;sort=id". $order_id ."'>ID". $img_id ."</a>";
-		$link_title = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=list&amp;sort=title". $order_title ."'>Title". $img_title ."</a>";
+		$link_title = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=list&amp;sort=title". $order_title ."'>Заголовок". $img_title ."</a>";
 
 		#=============================
 		# Grab Announcements
@@ -163,15 +163,15 @@ class ad_announce {
 									<td class='{$row_class}'>{$a['id']}</td>
 									<td class='{$row_class}'>{$a['title']}</td>
 									<td class='{$row_class}' style='font-weight: normal'>{$a['content']}</td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=edit&amp;id={$a['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=dodel&amp;id={$a['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=edit&amp;id={$a['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=dodel&amp;id={$a['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 								</tr>";
 			}
 		}
 		else
 		{
 			$announce_rows .= "<tr>
-								<td class='option1' colspan='5'>There are no announcements to display.</td>
+								<td class='option1' colspan='5'>Нет новостей для отображения.</td>
 							</tr>";
 		}
 
@@ -192,7 +192,7 @@ class ad_announce {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this announcement?') )
+								if ( confirm('Вы уверены, что хотите удалить эту новость?') )
 								{
 									return true;
 								}
@@ -204,28 +204,28 @@ class ad_announce {
 
 						</script>
 						{$error}
-						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=news' title='Visit relevant settings page'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Settings' /></a></div>Announcements List</div>
+						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=news' title='Посетите страницу настроек'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Настройки' /></a></div>Список Новостей</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='4%' align='left'>{$link_id}</th>
 							<th width='24%' align='left'>{$link_title}</th>
-							<th width='61%' align='left'>Description</th>
-							<th width='5%'>Edit</th>
-							<th width='7%'>Delete</th>
+							<th width='61%' align='left'>Описание</th>
+							<th width='5%'>Редактировать</th>
+							<th width='7%'>Удалить</th>
 						</tr>
 						". $announce_rows ."
 						</table>
-						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=add' class='fake_button'>Add A New Announcement</a></div></div>";
+						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=add' class='fake_button'>Добавить Новость</a></div></div>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Announcements</a>",
-						   "List Announcements",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Новости</a>",
+						   "Список Новостей",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Announcements' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление Новостями' ) );
 	}
 
 	#=======================================
@@ -261,7 +261,7 @@ class ad_announce {
 							{
 								if ( ! form.title.value )
 								{
-									alert('Please enter a title.');
+									alert('Пожалуйста введите заголовок.');
 									form.title.focus();
 									return false;
 								}
@@ -299,14 +299,14 @@ class ad_announce {
 
 		$this->output .= "<form action='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
 							{$error}
-							<div class='groupbox'>Add Announcement</div>
+							<div class='groupbox'>Добавить Новость</div>
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='19%'><label for='title'>Title</label></td>
+								<td class='option1' width='19%'><label for='title'>Заголовок</label></td>
 								<td class='option1' width='81%'><input type='text' name='title' id='title' value='{$this->ifthd->input['title']}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2' valign='top'><label for='excerpt'>Excerpt</label><br /><br /><div class='desc'>(Optional)</div></td>
+								<td class='option2' valign='top'><label for='excerpt'>Аннотация</label><br /><br /><div class='desc'>(Дополнительно)</div></td>
 								<td class='option2'><textarea name='excerpt' id='excerpt' cols='50' rows='2'>{$this->ifthd->input['excerpt']}</textarea></td>
 							</tr>";
 		
@@ -318,7 +318,7 @@ class ad_announce {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											This excerpt will be displayed as a small preview of the announcement on the portal.  If you do not input an excerpt, Trellis Desk will automatically use the first ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." characters of the announcement.
+											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображается начало ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." самой новости
 										</div>
 										</div>
 									</div>
@@ -327,28 +327,28 @@ class ad_announce {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option1'>Options</td>
+								<td class='option1'>Опции</td>
 								<td class='option1' style='font-weight: normal'>
-									". $this->ifthd->skin->checkbox( 'dis_comments', 'Disable Comments', $this->ifthd->input['dis_comments'] ) ."&nbsp;&nbsp;
-									". $this->ifthd->skin->checkbox( 'email_members', 'Send Email to Members *', $this->ifthd->input['email_members'] ) ."
+									". $this->ifthd->skin->checkbox( 'dis_comments', 'Отключить комментарии', $this->ifthd->input['dis_comments'] ) ."&nbsp;&nbsp;
+									". $this->ifthd->skin->checkbox( 'email_members', 'Отправить Email пользователям Members *', $this->ifthd->input['email_members'] ) ."
 								</td>
 							</tr>
 							<tr>
 								<td colspan='2' class='option2'><textarea name='contentb' id='contentb' rows='10' cols='120' style='width: 98%; height: 230px;'>{$this->ifthd->input['contentb']}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='add' value='Add Announcement' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='add' value='Добавить новость' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Announcements</a>",
-						   "Add Announcement",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Новости</a>",
+						   "Добавить новость",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Announcements' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление новостями' ) );
 	}
 
 	#=======================================
@@ -449,15 +449,15 @@ class ad_announce {
 		}
 
 		$this->output .= "<form action='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=doedit&amp;id={$a['id']}' method='post' onsubmit='return validate_form(this)'>
-							<div class='groupbox'>Editing Announcement: {$a['title']}</div>
+							<div class='groupbox'>Редактирование новости: {$a['title']}</div>
 							{$error}
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='19%'><label for='title'>Title</label></td>
+								<td class='option1' width='19%'><label for='title'>Заголовок</label></td>
 								<td class='option1' width='81%'><input type='text' name='title' id='title' value='{$title}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2' valign='top'><label for='excerpt'>Excerpt</label><br /><br /><div class='desc'>(Optional)</div></td>
+								<td class='option2' valign='top'><label for='excerpt'>Аннотация</label><br /><br /><div class='desc'>(Дополнительно)</div></td>
 								<td class='option2'><textarea name='excerpt' id='excerpt' cols='50' rows='2'>{$excerpt}</textarea></td>
 							</tr>";
 		
@@ -469,7 +469,7 @@ class ad_announce {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											This excerpt will be displayed as a small preview of the announcement on the portal.  If you do not input an excerpt, Trellis Desk will automatically use the first ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." characters of the announcement.
+											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображается начало ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." самой новости.
 										</div>
 										</div>
 									</div>
@@ -478,27 +478,27 @@ class ad_announce {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option1'>Options</td>
+								<td class='option1'>Опции</td>
 								<td class='option1' style='font-weight: normal'>
-									". $this->ifthd->skin->checkbox( 'dis_comments', 'Disable Comments', $dis_comments ) ."
+									". $this->ifthd->skin->checkbox( 'dis_comments', 'Отключить комментарии', $dis_comments ) ."
 								</td>
 							</tr>
 							<tr>
 								<td colspan='2' class='option2'><textarea name='contentb' id='contentb' rows='10' cols='120' style='width: 98%; height: 230px;'>{$content}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Announcement' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='edit' value='Сохранить изменения' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Announcements</a>",
-						   "Edit Announcement",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Новости</a>",
+						   "Редактировать новость",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Announcements' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление новостями' ) );
 	}
 
 	#=======================================
@@ -519,12 +519,12 @@ class ad_announce {
 
 		if ( ! $this->ifthd->input['title'] )
 		{
-			$this->add_announcement('Please enter a title.');
+			$this->add_announcement('Пожалуйста, введите заголовок.');
 		}
 
 		if ( ! $this->ifthd->input['contentb'] )
 		{
-			$this->add_announcement('Please enter an announcement');
+			$this->add_announcement('Пожалуйста, введите новость');
 		}
 		
 		$this->ifthd->input['contentb'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['contentb'] );
@@ -554,7 +554,7 @@ class ad_announce {
 
 		$announce_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'admin', "Announcement Added &#039;". $this->ifthd->input['title'] ."&#039;", 1, $announce_id );
+		$this->ifthd->log( 'admin', "Новость добавлена &#039;". $this->ifthd->input['title'] ."&#039;", 1, $announce_id );
 
 		#=============================
 		# Send Email
@@ -599,7 +599,7 @@ class ad_announce {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=announce&code=list', 'add_announce_success' );
-		$this->list_announcements( '', 'The announcement has been successfully added.' );
+		$this->list_announcements( '', 'Новость успешно добавлена.' );
 	}
 
 	#=======================================
@@ -636,12 +636,12 @@ class ad_announce {
 
 		if ( ! $this->ifthd->input['title'] )
 		{
-			$this->edit_announcement('Please enter a title.');
+			$this->edit_announcement('Пожалуйста, введите заголовок.');
 		}
 
 		if ( ! $this->ifthd->input['contentb'] )
 		{
-			$this->edit_announcement('Please enter an announcement.');
+			$this->edit_announcement('Пожалуйста, введите новость.');
 		}
 		
 		$this->ifthd->input['contentb'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['contentb'] );
@@ -665,7 +665,7 @@ class ad_announce {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Announcement Edited &#039;". $this->ifthd->input['title'] ."&#039;", 1, $this->ifthd->input['id'] );
+		$this->ifthd->log( 'admin', "Новость отредактирована &#039;". $this->ifthd->input['title'] ."&#039;", 1, $this->ifthd->input['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -678,7 +678,7 @@ class ad_announce {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=announce&code=list', 'edit_announce_success' );
-		$this->list_announcements( '', 'The announcement has been successfully updated.' );
+		$this->list_announcements( '', 'Новость успешно обновлена.' );
 	}
 
 	#=======================================
@@ -727,7 +727,7 @@ class ad_announce {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Announcement Deleted &#039;". $a['title'] ."&#039;", 2, $a['id'] );
+		$this->ifthd->log( 'admin', "Новость удалена &#039;". $a['title'] ."&#039;", 2, $a['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -740,7 +740,7 @@ class ad_announce {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=announce&code=list', 'delete_announce_success' );
-		$this->list_announcements( 'The announcement has been successfully deleted.' );
+		$this->list_announcements( 'Новость успешно удалена.' );
 	}
 
 }

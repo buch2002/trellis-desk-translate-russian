@@ -34,8 +34,8 @@ class ad_article {
 			$this->ifthd->skin->error('no_perm');
 		}
 		
-		$this->ifthd->skin->set_section( 'Knowledge Base / Custom Pages Control' );		
-		$this->ifthd->skin->set_description( 'Manage your knowledge base, categories, articles and custom pages.' );
+		$this->ifthd->skin->set_section( 'База знаний / Управление страницами' );		
+		$this->ifthd->skin->set_description( 'Управление базой знаний, категорями, статьями и личными страницами.' );
 
 		if ( $this->ifthd->input['act'] == 'kb' )
 		{
@@ -137,15 +137,15 @@ class ad_article {
 									<td class='{$row_class}'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;cat={$c['id']}'>{$c['name']}</a></td>
 									<td class='{$row_class}' style='font-weight: normal'>{$c['description']}</td>
 									<td class='{$row_class}' align='center'>{$c['articles']}</td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=edit&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=delete&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=edit&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=delete&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 								</tr>";
 			}
 		}
 		else
 		{
 			$cat_rows .= "<tr>
-								<td class='option1' colspan='6'>There are no categories to display.</td>
+								<td class='option1' colspan='6'>Нет категорий для отображения.</td>
 							</tr>";
 		}
 
@@ -163,15 +163,15 @@ class ad_article {
 		}
 
 		$this->output = "{$error}
-						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb' title='Visit relevant settings page'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Settings' /></a></div>Categories List</div>
+						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb' title='Посетите страницу настроек'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Настройки' /></a></div>Список категорий</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='5%' align='left'>ID</th>
-							<th width='21%' align='left'>Name</th>
-							<th width='51%' align='left'>Description</th>
-							<th width='8%'>Articles</th>
-							<th width='6%'>Edit</th>
-							<th width='9%'>Delete</th>
+							<th width='21%' align='left'>Название</th>
+							<th width='51%' align='left'>Описание</th>
+							<th width='8%'>Статьи</th>
+							<th width='6%'>Редактировать</th>
+							<th width='9%'>Удалить</th>
 						</tr>
 						". $cat_rows ."
 						</table><br />
@@ -182,14 +182,14 @@ class ad_article {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -198,29 +198,29 @@ class ad_article {
 						</script>
 
 						<form action='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
-						<div class='groupbox'>Add A New Category</div>
+						<div class='groupbox'>Добавить новую категорию</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='17%'><label for='name'>Name</label></td>
+							<td class='option1' width='17%'><label for='name'>Название</label></td>
 							<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$this->ifthd->input['name']}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='description'>Description</label></td>
+							<td class='option2' valign='top'><label for='description'>Описание</label></td>
 							<td class='option2'><textarea name='description' id='description' cols='50' rows='2'>{$this->ifthd->input['description']}</textarea></td>
 						</tr>
 						</table>
-						<div class='formtail'><input type='submit' name='submit' id='add' value='Add Category' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='add' value='Добавить категорию' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "List Categories",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Список категорий",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Categories' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление категориями' ) );
 	}
 
 	#=======================================
@@ -280,14 +280,14 @@ class ad_article {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -296,30 +296,30 @@ class ad_article {
 						</script>
 
 						<form action='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=doedit&amp;id={$c['id']}' method='post' onsubmit='return validate_form(this)'>
-						<div class='groupbox'>Editing Category: {$c['name']}</div>
+						<div class='groupbox'>Редактирование категории: {$c['name']}</div>
 						{$error}
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='17%'><label for='name'>Name</label></td>
+							<td class='option1' width='17%'><label for='name'>Название</label></td>
 							<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='description'>Description</label></td>
+							<td class='option2' valign='top'><label for='description'>Описание</label></td>
 							<td class='option2'><textarea name='description' id='description' cols='50' rows='2'>{$description}</textarea></td>
 						</tr>
 						</table>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Category' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Сохранить изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "Edit Category",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Редактировать категорию",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Categories' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление категориями' ) );
 	}
 
 	#=======================================
@@ -363,24 +363,24 @@ class ad_article {
 		$cat_drop = $this->ifthd->build_cat_drop( 0, $c['id'] );
 
 		$this->output = "<form action='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=dodel&amp;id={$c['id']}' method='post'>
-						<div class='groupbox'>Deleting Category: {$c['name']}</div>
-						<div class='subbox'>What would you like to do with the articles in this category?</div>
+						<div class='groupbox'>Удаление категории: {$c['name']}</div>
+						<div class='subbox'>Что вы хотите зделать со статьями в этой категории?</div>
 						<div class='option1'>
-							<input type='radio' name='action' id='action1' value='1' checked='checked' /> <label for='action1'>Move the articles to this category:</label> <select name='moveto'>{$cat_drop}</select><br />
-							<input type='radio' name='action' id='action2' value='2' /> <label for='action2'>Delete the articles</label>
+							<input type='radio' name='action' id='action1' value='1' checked='checked' /> <label for='action1'>Переместить статьи в эту категорию:</label> <select name='moveto'>{$cat_drop}</select><br />
+							<input type='radio' name='action' id='action2' value='2' /> <label for='action2'>Удалить все статьи в этой категории</label>
 						</div>
-						<div class='formtail'><input type='submit' name='submit' id='delete' value='Delete Category' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='delete' value='Удалить категорию' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "Delete Category",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Удалить категорию",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Categories' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление категориями' ) );
 	}
 
 	#=======================================
@@ -401,12 +401,12 @@ class ad_article {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->show_cats('Please enter a name.');
+			$this->show_cats('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->show_cats('Please enter a description.');
+			$this->show_cats('Пожалуйста, введите описание.');
 		}
 
 		#=============================
@@ -427,7 +427,7 @@ class ad_article {
 
 		$cat_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'admin', "KB Category Added &#039;". $this->ifthd->input['name'] ."&#039;", 1, $cat_id );
+		$this->ifthd->log( 'admin', "БЗ категория добавлена &#039;". $this->ifthd->input['name'] ."&#039;", 1, $cat_id );
 
 		#=============================
 		# Rebuild Cache
@@ -440,7 +440,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kbcat&code=list', 'add_cat_success' );
-		$this->show_cats( '', 'The category has been successfully added.' );
+		$this->show_cats( '', 'Категория успешно добавлена.' );
 	}
 
 	#=======================================
@@ -477,12 +477,12 @@ class ad_article {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->edit_cat('Please enter a name.');
+			$this->edit_cat('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->edit_cat('Please enter a description.');
+			$this->edit_cat('Пожалуйста, введите описание.');
 		}
 
 		#=============================
@@ -502,7 +502,7 @@ class ad_article {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "KB Category Updated &#039;". $this->ifthd->input['name'] ."&#039;", 1, $this->ifthd->input['id'] );
+		$this->ifthd->log( 'admin', "БЗ категория обновлена &#039;". $this->ifthd->input['name'] ."&#039;", 1, $this->ifthd->input['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -515,7 +515,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kbcat&code=list', 'edit_cat_success' );
-		$this->show_cats( '', 'The category has been successfully updated.' );
+		$this->show_cats( '', 'Категория успешно обновлена.' );
 	}
 
 	#=======================================
@@ -633,7 +633,7 @@ class ad_article {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "KB Category Deleted &#039;". $c['name'] ."&#039;", 2, $c['id'] );
+		$this->ifthd->log( 'admin', "БЗ категория удалена &#039;". $c['name'] ."&#039;", 2, $c['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -646,7 +646,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kbcat&code=list', 'delete_cat_success' );
-		$this->show_cats( 'The category has been successfully deleted.' );
+		$this->show_cats( 'Категория успешно удалена.' );
 	}
 
 	#=======================================
@@ -689,17 +689,17 @@ class ad_article {
 		if ( $order == 'DESC' )
 		{
 			$$order_var = "&amp;order=asc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='DOWN' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='Вниз' />";
 		}
 		else
 		{
 			$$order_var = "&amp;order=desc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='UP' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='Вверх' />";
 		}
 
 		$link_id = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;sort=id". $order_id ."'>ID". $img_id ."</a>";
-		$link_name = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;sort=name". $order_name ."'>Name". $img_name ."</a>";
-		$link_description = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;sort=description". $order_description ."'>Description". $img_description ."</a>";
+		$link_name = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;sort=name". $order_name ."'>Название". $img_name ."</a>";
+		$link_description = "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list&amp;sort=description". $order_description ."'>Описание". $img_description ."</a>";
 
 		if ( $this->ifthd->input['sort'] )
 		{
@@ -791,8 +791,8 @@ class ad_article {
 								<td class='{$row_class}'><a href='<! HD_URL !>/index.php?act=article&amp;code=view&amp;id={$a['id']}' target='_blank'>{$a['id']}</a></td>
 								<td class='{$row_class}'><a href='<! HD_URL !>/index.php?act=article&amp;code=view&amp;id={$a['id']}' target='_blank'>{$a['name']}</a></td>
 								<td class='{$row_class}' style='font-weight: normal'>{$a['description']}</td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=edit&amp;id={$a['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=dodel&amp;id={$a['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=edit&amp;id={$a['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=dodel&amp;id={$a['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 							</tr>";
 		}
 
@@ -820,7 +820,7 @@ class ad_article {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this article?') )
+								if ( confirm('Вы уверены, что хотите удалить эту статью?') )
 								{
 									return true;
 								}
@@ -832,14 +832,14 @@ class ad_article {
 
 						</script>
 						{$error}
-						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb' title='Visit relevant settings page'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Settings' /></a></div>Articles List</div>
+						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb' title='Посетите страницу настроек'><img src='<! IMG_DIR !>/button_mini_settings.gif' alt='Настройки' /></a></div>Список статей</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='5%' align='left'>{$link_id}</th>
 							<th width='25%' align='left'>{$link_name}</th>
 							<th width='52%' align='left'>{$link_description}</th>
-							<th width='7%'>Edit</th>
-							<th width='11%'>Delete</th>
+							<th width='7%'>Редактировать</th>
+							<th width='11%'>Удалить</th>
 						</tr>
 						". $article_rows ."
 						</table>
@@ -849,12 +849,12 @@ class ad_article {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "List Articles",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Список статей",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Articles' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление статьями' ) );
 	}
 
 	#=======================================
@@ -886,14 +886,14 @@ class ad_article {
 						{
 							if ( ! form.name.value  )
 							{
-								alert('Please enter a title.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value  )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -929,18 +929,18 @@ class ad_article {
 
 		$this->output .= "{$error}
 							<form action='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
-							<div class='groupbox'>Add A New Article</div>
+							<div class='groupbox'>Добавление новой статьи</div>
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='17%'><label for='name'>Title</label></td>
+								<td class='option1' width='17%'><label for='name'>Заголовок</label></td>
 								<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$this->ifthd->input['name']}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2'><label for='category'>Category</label></td>
+								<td class='option2'><label for='category'>Категория</label></td>
 								<td class='option2'><select name='category' id='category'>{$cat_drop}</select></td>
 							</tr>
 							<tr>
-								<td class='option1' valign='top'><label for='description'>Description</label></td>
+								<td class='option1' valign='top'><label for='description'>Описание</label></td>
 								<td class='option1'><textarea name='description' id='description' cols='50' rows='2'>{$this->ifthd->input['description']}</textarea></td>
 							</tr>";
 		
@@ -952,7 +952,7 @@ class ad_article {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											This will be displayed under the article name on the list articles page.
+											Это будет отображаться под названием статьи на странице со списком статей.
 										</div>
 										</div>
 									</div>
@@ -961,8 +961,8 @@ class ad_article {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option2'><label for='keywords'>Keywords</label></td>
-								<td class='option2' style='font-weight: normal'><input type='text' name='keywords' id='keywords' value='{$this->ifthd->input['keywords']}' size='35' /> (separate by comma)</td>
+								<td class='option2'><label for='keywords'>Ключевые слова</label></td>
+								<td class='option2' style='font-weight: normal'><input type='text' name='keywords' id='keywords' value='{$this->ifthd->input['keywords']}' size='35' /> (через запятую)</td>
 							</tr>";
 		
 		if ( ACP_HELP )
@@ -973,7 +973,7 @@ class ad_article {
 										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info2' style='display: none;'>
 										<div>
-											These keywords will be used when searching to help improve search results.  Please separate each keyword with a comma.
+											Эти ключевые слова будут использоваться при поиске, для улучшения результатов поиска. Ключевые слова должны разделяться запятой.
 										</div>
 										</div>
 									</div>
@@ -982,28 +982,28 @@ class ad_article {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option1'>Security</td>
+								<td class='option1'>Опции</td>
 								<td class='option1' style='font-weight: normal'>
-									". $this->ifthd->skin->checkbox( 'dis_comments', 'Disable Comments', $this->ifthd->input['dis_comments'] ) ."&nbsp;&nbsp;
-									". $this->ifthd->skin->checkbox( 'dis_rating', 'Disable Rating', $this->ifthd->input['dis_rating'] ) ."
+									". $this->ifthd->skin->checkbox( 'dis_comments', 'Отключить комментарии', $this->ifthd->input['dis_comments'] ) ."&nbsp;&nbsp;
+									". $this->ifthd->skin->checkbox( 'dis_rating', 'Отключить голосование за статью', $this->ifthd->input['dis_rating'] ) ."
 								</td>
 							</tr>
 							<tr>
 								<td class='option2' colspan='2'><textarea name='article' id='article' rows='10' cols='120' style='width: 98%; height: 350px;'>{$this->ifthd->input['article']}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='add' value='Add Article' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='add' value='Добавить статью' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "Add Article",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Добавить статью",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Articles' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление статьями' ) );
 	}
 
 	#=======================================
@@ -1075,14 +1075,14 @@ class ad_article {
 						{
 							if ( ! form.name.value  )
 							{
-								alert('Please enter a title.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -1118,18 +1118,18 @@ class ad_article {
 
 		$this->output .= "{$error}
 							<form action='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=doedit&amp;id={$a['id']}' method='post' onsubmit='return validate_form(this)'>
-							<div class='groupbox'>Editing Article: {$a['name']}</div>
+							<div class='groupbox'>Редактирование статьи: {$a['name']}</div>
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='17%'><label for='name'>Title</label></td>
+								<td class='option1' width='17%'><label for='name'>Заголовок</label></td>
 								<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2'><label for='category'>Category</label></td>
+								<td class='option2'><label for='category'>Категория</label></td>
 								<td class='option2'><select name='category' id='category'>{$cat_drop}</select></td>
 							</tr>
 							<tr>
-								<td class='option1' valign='top'><label for='description'>Description</label></td>
+								<td class='option1' valign='top'><label for='description'>Описание</label></td>
 								<td class='option1'><textarea name='description' id='description' cols='50' rows='2'>{$description}</textarea></td>
 							</tr>";
 		
@@ -1141,7 +1141,7 @@ class ad_article {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											This will be displayed under the article name on the list articles page.
+											Это будет отображаться под названием статьи на странице со списком статей.
 										</div>
 										</div>
 									</div>
@@ -1150,8 +1150,8 @@ class ad_article {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option2'><label for='keywords'>Keywords</label></td>
-								<td class='option2' style='font-weight: normal'><input type='text' name='keywords' id='keywords' value='{$keywords}' size='35' /> (separate by comma or bar)</td>
+								<td class='option2'><label for='keywords'>Ключевые слова</label></td>
+								<td class='option2' style='font-weight: normal'><input type='text' name='keywords' id='keywords' value='{$keywords}' size='35' /> (через запятую)</td>
 							</tr>";
 		
 		if ( ACP_HELP )
@@ -1162,7 +1162,7 @@ class ad_article {
 										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info2' style='display: none;'>
 										<div>
-											These keywords will be used when searching to help improve search results.  Please separate each keyword with a comma.
+											Эти ключевые слова будут использоваться при поиске, для улучшения результатов поиска. Ключевые слова должны разделяться запятой.
 										</div>
 										</div>
 									</div>
@@ -1171,28 +1171,28 @@ class ad_article {
 		}
 		
 		$this->output .= "<tr>
-								<td class='option1'>Security</td>
+								<td class='option1'>Опции</td>
 								<td class='option1' style='font-weight: normal'>
-									". $this->ifthd->skin->checkbox( 'dis_comments', 'Disable Comments', $dis_comments ) ."&nbsp;&nbsp;
-									". $this->ifthd->skin->checkbox( 'dis_rating', 'Disable Rating', $dis_rating ) ."
+									". $this->ifthd->skin->checkbox( 'dis_comments', 'Отключить комментарии', $dis_comments ) ."&nbsp;&nbsp;
+									". $this->ifthd->skin->checkbox( 'dis_rating', 'Отключить голосование за статью', $dis_rating ) ."
 								</td>
 							</tr>
 							<tr>
 								<td class='option2' colspan='2'><textarea name='article' id='article' rows='10' cols='120' style='width: 98%; height: 350px;'>{$article}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Article' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='edit' value='Сохранить изменения' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>Knowledge Base</a>",
-						   "Edit Article",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний</a>",
+						   "Редактировать статью",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Articles' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление статьями' ) );
 	}
 
 	#=======================================
@@ -1213,19 +1213,19 @@ class ad_article {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->add_article('Please enter a name.');
+			$this->add_article('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->add_article('Please enter a description.');
+			$this->add_article('Пожалуйста, введите описание.');
 		}
 		
 		$this->ifthd->input['article'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['article'] );
 
 		if ( ! $this->ifthd->input['article'] )
 		{
-			$this->add_article('Please enter article content.');
+			$this->add_article('Пожалуйста, введите содержание статьи.');
 		}
 
 		#=============================
@@ -1300,7 +1300,7 @@ class ad_article {
 
 		$article_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'admin', "KB Article Added &#039;". $this->ifthd->input['name'] ."&#039;", 1, $article_id );
+		$this->ifthd->log( 'admin', "БЗ статья добавлена &#039;". $this->ifthd->input['name'] ."&#039;", 1, $article_id );
 
 		#=============================
 		# Update Category
@@ -1327,7 +1327,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kb&code=list&cat='. $c['id'], 'add_article_success' );
-		$this->list_articles( '', 'The article has been successfully added.' );
+		$this->list_articles( '', 'Статья успешно добавлена.' );
 	}
 
 	#=======================================
@@ -1366,19 +1366,19 @@ class ad_article {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->edit_article('Please enter a name.');
+			$this->edit_article('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->edit_article('Please enter a description.');
+			$this->edit_article('Пожалуйста, введите описание.');
 		}
 		
 		$this->ifthd->input['article'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['article'] );
 
 		if ( ! $this->ifthd->input['article'] )
 		{
-			$this->edit_article('Please enter article content');
+			$this->edit_article('Пожалуйста, введите содержание статьи.');
 		}
 
 		#=============================
@@ -1496,7 +1496,7 @@ class ad_article {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "KB Article Updated &#039;". $this->ifthd->input['name'] ."&#039;", 1, $a['id'] );
+		$this->ifthd->log( 'admin', "БЗ статья обновлена &#039;". $this->ifthd->input['name'] ."&#039;", 1, $a['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -1509,7 +1509,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kb&code=list&cat='. $c['id'], 'edit_article_success' );
-		$this->list_articles( '', 'The article has been successfully updated.' );
+		$this->list_articles( '', 'Статья успешно обновлена.' );
 	}
 
 	#=======================================
@@ -1558,7 +1558,7 @@ class ad_article {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "KB Article Deleted &#039;". $a['name'] ."&#039;", 2, $a['id'] );
+		$this->ifthd->log( 'admin', "БЗ статья удалена &#039;". $a['name'] ."&#039;", 2, $a['id'] );
 
 		#=============================
 		# Update Old Category
@@ -1586,7 +1586,7 @@ class ad_article {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=kb&code=list&cat='. $a['cat_id'], 'delete_article_success' );
-		$this->list_articles( 'The article has been successfully deleted.' );
+		$this->list_articles( 'Статья успешно удалена.' );
 	}
 
 }

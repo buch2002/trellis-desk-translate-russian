@@ -34,8 +34,8 @@ class ad_cpfields {
 			$this->ifthd->skin->error('no_perm');
 		}
 		
-		$this->ifthd->skin->set_section( 'Member Control' );		
-		$this->ifthd->skin->set_description( 'Manage your members, groups, custom profile fields and members awaiting validation.' );
+		$this->ifthd->skin->set_section( 'Управление пользователями' );		
+		$this->ifthd->skin->set_description( 'Управление вашими пользователями, группами, настраиваемые поля профиля и пользователи ожидающие проверки.' );
 
 		switch( $this->ifthd->input['code'] )
 	    {
@@ -100,32 +100,32 @@ class ad_cpfields {
 
 				if ( $f['required'] )
 				{
-					$f['required'] = 'Yes';
+					$f['required'] = 'Да';
 				}
 				else
 				{
-					$f['required'] = 'No';
+					$f['required'] = 'Нет';
 				}
 
 				if ( $f['type'] == 'textfield' )
 				{
-					$f['type'] = 'Text Field';
+					$f['type'] = 'Текстовое поле';
 				}
 				elseif ( $f['type'] == 'textarea' )
 				{
-					$f['type'] = 'Text Area';
+					$f['type'] = 'Текстовая область';
 				}
 				elseif ( $f['type'] == 'dropdown' )
 				{
-					$f['type'] = 'Drop-Down';
+					$f['type'] = 'Выпадающий список';
 				}
 				elseif ( $f['type'] == 'checkbox' )
 				{
-					$f['type'] = 'Checkbox';
+					$f['type'] = 'Флажок';
 				}
 				elseif ( $f['type'] == 'radio' )
 				{
-					$f['type'] = 'Radio';
+					$f['type'] = 'Радио кнопка';
 				}
 
 				$field_rows .= "<tr>
@@ -134,15 +134,15 @@ class ad_cpfields {
 									<td class='{$row_class}' style='font-weight: normal'>{$f['fkey']}</td>
 									<td class='{$row_class}' style='font-weight: normal'>{$f['type']}</td>
 									<td class='{$row_class}' align='center'>{$f['required']}</td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=edit&amp;id={$f['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=dodel&amp;id={$f['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=edit&amp;id={$f['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=dodel&amp;id={$f['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 								</tr>";
 			}
 		}
 		else
 		{
 			$field_rows .= "<tr>
-								<td class='option1' colspan='7'>There are no fields to display.</td>
+								<td class='option1' colspan='7'>Нет полей для отображения.</td>
 							</tr>";
 		}
 
@@ -163,7 +163,7 @@ class ad_cpfields {
 
 							function sure_delete()
 							{
-								if ( confirm(\"Are you sure you want to delete this field?.\") )
+								if ( confirm(\"Вы уверены, что хотите удалить это поле?.\") )
 								{
 									return true;
 								}
@@ -175,30 +175,30 @@ class ad_cpfields {
 
 						</script>
 						{$error}
-						<div class='groupbox'>Custom Profile Fields List</div>
+						<div class='groupbox'>Список настраиваемых полей профиля</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='5%' align='left'>ID</th>
-							<th width='28%' align='left'>Name</th>
-							<th width='23%' align='left'>Key</th>
-							<th width='19%' align='left'>Type</th>
-							<th width='11%'>Required</th>
-							<th width='6%'>Edit</th>
-							<th width='8%'>Delete</th>
+							<th width='28%' align='left'>Название</th>
+							<th width='23%' align='left'>Ключ</th>
+							<th width='19%' align='left'>Тип поля</th>
+							<th width='11%'>Обязательное поле</th>
+							<th width='6%'>Редактировать</th>
+							<th width='8%'>Удалить</th>
 						</tr>
 						". $field_rows ."
 						</table>
-						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=add' class='fake_button'>Add A New Field</a></div></div>";
+						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=add' class='fake_button'>Добавить новое поле</a></div></div>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Custom Profile Fields</a>",
-						   "List Fields",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Настраиваемые поля профиля</a>",
+						   "Список полей",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Custom Profile Fields' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление настраиваемыми полями профиля' ) );
 	}
 
 	#=======================================
@@ -229,14 +229,14 @@ class ad_cpfields {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( form.fkey.value.length < 3 )
 							{
-								alert('Please enter a key at least 3 characters long.');
+								alert('Пожалуйста, введите ключ не менее 3 символов.');
 								form.fkey.focus();
 								return false;
 							}
@@ -245,15 +245,15 @@ class ad_cpfields {
 						</script>
 						{$error}
 						<form action='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
-						<div class='groupbox'>Adding Custom Profile Field</div>
+						<div class='groupbox'>Добавление настраиваемых полей профиля</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='28%'><label for='name'>Name</label></td>
+							<td class='option1' width='28%'><label for='name'>Название</label></td>
 							<td class='option1' width='72%'><input type='text' name='name' id='name' value='{$this->ifthd->input['name']}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2'><label for='fkey'>Key</label></td>
-							<td class='option2' style='font-weight: normal'><input type='text' name='fkey' id='fkey' value='{$this->ifthd->input['fkey']}' size='20' /> <span class='addesc'>(No spaces.  Must be alphanumeric &amp; lowercase)</span></td>
+							<td class='option2'><label for='fkey'>Ключ</label></td>
+							<td class='option2' style='font-weight: normal'><input type='text' name='fkey' id='fkey' value='{$this->ifthd->input['fkey']}' size='20' /> <span class='addesc'>(Без пробелов. Может содержать только цифры и буквы латинского алфавита в нижнем регистре.)</span></td>
 						</tr>";
 		
 		if ( ACP_HELP )
@@ -264,7 +264,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											The key is a unique identifier for this custom field.  It should contain no spaces and it must be alphanumeric plus lowercase.
+											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
 										</div>
 										</div>
 									</div>
@@ -273,13 +273,13 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Type</td>
+							<td class='option1'>Тип поля</td>
 							<td class='option1'>
-								<select name='type' id='type'><option value='textfield'{$sel_textfield}>Text Field</option><option value='textarea'{$sel_textarea}>Text Area</option><option value='dropdown'{$sel_dropdown}>Drop-Down List</option><option value='checkbox'{$sel_checkbox}>Checkbox</option><option value='radio'{$sel_radio}>Radio</option></select>
+								<select name='type' id='type'><option value='textfield'{$sel_textfield}>Текстовое поле</option><option value='textarea'{$sel_textarea}>Текстовая область</option><option value='dropdown'{$sel_dropdown}>Выпадающий список</option><option value='checkbox'{$sel_checkbox}>Флажок</option><option value='radio'{$sel_radio}>Радио кнопка</option></select>
 							</td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='fextra'>Extra</label><div class='addesc' style='font-weight: normal; font-size: 12px'>Use with drop-down list or radios.  Put each option on a new line.<br /><br />Format: key=Value</div></td>
+							<td class='option2' valign='top'><label for='fextra'>Дополнительно</label><div class='addesc' style='font-weight: normal; font-size: 12px'>Это окно используется при выборе &#8220;Выпадающего списока&#8221; или &#8220;Радио кнопки&#8221;. Указывайте каждый вариант с новой строки.<br /><br />Format: key=Value</div></td>
 							<td class='option2'><textarea name='fextra' id='fextra' cols='32' rows='3'>{$this->ifthd->input['extra']}</textarea></td>
 						</tr>";
 		
@@ -291,10 +291,10 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info2' style='display: none;'>
 										<div>
-											Example for dropdown: <select name='example'><option value='yes'>Yes</option><option value='no'>No</option><option value='maybe'>Maybe</option></select><br /><br />
-											yes=Yes<br />
-											no=No<br />
-											maybe=Maybe
+											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
+											yes=Да<br />
+											no=Нет<br />
+											maybe=Возможно
 										</div>
 										</div>
 									</div>
@@ -303,7 +303,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Required</td>
+							<td class='option1'>Обязательное поле</td>
 							<td class='option1' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'required', $this->ifthd->input['required'] ) ."
 							</td>
@@ -317,7 +317,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info3' style='display: none;'>
 										<div>
-											If required, this field must have a value when updating profile information.  However, this field will only be shown on the registration page if the Show on Registration option is set to Yes below.
+											Это поле должно быть заполненым при обновлении информации о профиле. Однако, это поле будет отображаться только на странице регистрации, если выбрать в опциях &#8220;Показать при регистрации&#8221; значение &#8220;Да&#8221; ниже.
 										</div>
 										</div>
 									</div>
@@ -326,9 +326,9 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option2'>Show on Registration</td>
+							<td class='option2'>Показать при регистрации</td>
 							<td class='option2' style='font-weight: normal'>
-								". $this->ifthd->skin->yes_no_radio( 'reg', $this->ifthd->input['reg'] ) ." <span class='addesc'>(Bypasses permissions)</span>
+								". $this->ifthd->skin->yes_no_radio( 'reg', $this->ifthd->input['reg'] ) ." <span class='addesc'>(Пропускает разрешения)</span>
 							</td>
 						</tr>";
 		
@@ -340,7 +340,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info4' style='display: none;'>
 										<div>
-											If set to yes, this field will be shown on the registration page, regardless of the group permissions below.
+											Если установлено значение Да, то это поле будет показано на странице регистрации, независимо от группы разрешений ниже.
 										</div>
 										</div>
 									</div>
@@ -349,7 +349,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Show on Ticket View</td>
+							<td class='option1'>Показывать при просмотре тикета</td>
 							<td class='option1' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'ticket', $this->ifthd->input['ticket'] ) ."
 							</td>
@@ -363,7 +363,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info5' style='display: none;'>
 										<div>
-											If set to yes, this field and its value will be displayed on the view ticket page.
+											Если установлено значение Да, то это поле и его значение будет отображаться на странице просмотра тикета.
 										</div>
 										</div>
 									</div>
@@ -372,7 +372,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option2'>Staff Only</td>
+							<td class='option2'>Только для персонала</td>
 							<td class='option2' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'staff', $this->ifthd->input['staff'] ) ."
 							</td>
@@ -386,7 +386,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info6' style='display: none;'>
 										<div>
-											If set to yes, this field will only be visible and editable by staff who have access to the ACP.  This is useful for storing information regarding clients that only staff should see.
+											Если установлено значение Да, то это поле будет только видимым и редактируемым сотрудникам, которые имеют доступ к Административной Контрольной Панели. Это полезно для хранения информации о клиентах, только сотрудники должны их видеть.
 										</div>
 										</div>
 									</div>
@@ -395,7 +395,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1' valign='top'>Group Permissions</td>
+							<td class='option1' valign='top'>Разрешения для Групп</td>
 							<td class='option1'>
 								<select name='perms[]' id='perms' size='5' multiple='multiple'>
 								". $this->ifthd->build_group_drop( $this->ifthd->input['perms'] ) ."
@@ -411,7 +411,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info7' style='display: none;'>
 										<div>
-											Select the groups in which this custom field should be made available to.  You can select more than one group.
+											Выберите группы, в которых это поле будет доступным. Вы можете выбрать более одной группы.
 										</div>
 										</div>
 									</div>
@@ -420,18 +420,18 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "</table>
-						<div class='formtail'><input type='submit' name='submit' id='add' value='Add Field' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='add' value='Добавить поле' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Custom Profile Fields</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Настраиваемые поля профиля</a>",
 						   "Add Department",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Custom Profile Fields' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление настраиваемыми полями профиля' ) );
 	}
 
 	#=======================================
@@ -519,14 +519,14 @@ class ad_cpfields {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( form.fkey.value.length < 3 )
 							{
-								alert('Please enter a key at least 3 characters long.');
+								alert('Пожалуйста, введите ключ не менее 3 символов.');
 								form.fkey.focus();
 								return false;
 							}
@@ -535,15 +535,15 @@ class ad_cpfields {
 						</script>
 						{$error}
 						<form action='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields&amp;code=doedit&amp;id={$f['id']}' method='post' onsubmit='return validate_form(this)'>
-						<div class='groupbox'>Editing Custom Profile Field: {$f['name']}</div>
+						<div class='groupbox'>Редактирование настраиваемых полей профиля: {$f['name']}</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='28%'><label for='name'>Name</label></td>
+							<td class='option1' width='28%'><label for='name'>Название</label></td>
 							<td class='option1' width='72%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2'><label for='fkey'>Key</label></td>
-							<td class='option2' style='font-weight: normal'><input type='text' name='fkey' id='fkey' value='{$fkey}' size='20' /> <span class='addesc'>(No spaces.  Must be alphanumeric &amp; lowercase)</span></td>
+							<td class='option2'><label for='fkey'>Ключ</label></td>
+							<td class='option2' style='font-weight: normal'><input type='text' name='fkey' id='fkey' value='{$fkey}' size='20' /> <span class='addesc'>(Без пробелов. Может содержать только цифры и буквы латинского алфавита в нижнем регистре.)</span></td>
 						</tr>";
 		
 		if ( ACP_HELP )
@@ -554,7 +554,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											The key is a unique identifier for this custom field.  It should contain no spaces and it must be alphanumeric plus lowercase.
+											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
 										</div>
 										</div>
 									</div>
@@ -563,13 +563,13 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Type</td>
+							<td class='option1'>Тип поля</td>
 							<td class='option1'>
-								<select name='type' id='type'><option value='textfield'{$sel_textfield}>Text Field</option><option value='textarea'{$sel_textarea}>Text Area</option><option value='dropdown'{$sel_dropdown}>Drop-Down List</option><option value='checkbox'{$sel_checkbox}>Checkbox</option><option value='radio'{$sel_radio}>Radio</option></select>
+								<select name='type' id='type'><option value='textfield'{$sel_textfield}>Текстовое поле</option><option value='textarea'{$sel_textarea}>Текстовая область</option><option value='dropdown'{$sel_dropdown}>Выпадающий список</option><option value='checkbox'{$sel_checkbox}>Флажок</option><option value='radio'{$sel_radio}>Радио кнопка</option></select>
 							</td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='fextra'>Extra</label><div class='addesc' style='font-weight: normal; font-size: 12px'>Use with drop-down list or radios.  Put each option on a new line.<br /><br />Format: key=Value</div></td>
+							<td class='option2' valign='top'><label for='fextra'>Дополнительно</label><div class='addesc' style='font-weight: normal; font-size: 12px'>Это окно используется при выборе &#8220;Выпадающего списока&#8221; или &#8220;Радио кнопки&#8221;. Указывайте каждый вариант с новой строки.<br /><br />Format: key=Value</div></td>
 							<td class='option2'><textarea name='fextra' id='fextra' cols='32' rows='3'>{$extra}</textarea></td>
 						</tr>";
 		
@@ -581,10 +581,10 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info2' style='display: none;'>
 										<div>
-											Example for dropdown: <select name='example'><option value='yes'>Yes</option><option value='no'>No</option><option value='maybe'>Maybe</option></select><br /><br />
-											yes=Yes<br />
-											no=No<br />
-											maybe=Maybe
+											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
+											yes=Да<br />
+											no=Нет<br />
+											maybe=Возможно
 										</div>
 										</div>
 									</div>
@@ -593,7 +593,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Required</td>
+							<td class='option1'>Обязательное поле</td>
 							<td class='option1' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'required', $required ) ."
 							</td>
@@ -607,7 +607,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info3' style='display: none;'>
 										<div>
-											If required, this field must have a value when updating profile information.  However, this field will only be shown on the registration page if the Show on Registration option is set to Yes below.
+											Это поле должно быть заполненым при обновлении информации о профиле. Однако, это поле будет отображаться только на странице регистрации, если выбрать в опциях &#8220;Показать при регистрации&#8221; значение &#8220;Да&#8221; ниже.
 										</div>
 										</div>
 									</div>
@@ -616,9 +616,9 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option2'>Show on Registration</td>
+							<td class='option2'>Показать при регистрации</td>
 							<td class='option2' style='font-weight: normal'>
-								". $this->ifthd->skin->yes_no_radio( 'reg', $reg ) ." <span class='addesc'>(Bypasses permissions)</span>
+								". $this->ifthd->skin->yes_no_radio( 'reg', $reg ) ." <span class='addesc'>(Пропускает разрешения)</span>
 							</td>
 						</tr>";
 		
@@ -630,7 +630,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info4' style='display: none;'>
 										<div>
-											If set to yes, this field will be shown on the registration page, regardless of the group permissions below.
+											Если установлено значение Да, то это поле будет показано на странице регистрации, независимо от группы разрешений ниже.
 										</div>
 										</div>
 									</div>
@@ -639,7 +639,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1'>Show on Ticket View</td>
+							<td class='option1'>Показывать при просмотре тикета</td>
 							<td class='option1' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'ticket', $ticket ) ."
 							</td>
@@ -653,7 +653,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info5' style='display: none;'>
 										<div>
-											If set to yes, this field and its value will be displayed on the view ticket page.
+											Если установлено значение Да, то это поле и его значение будет отображаться на странице просмотра тикета.
 										</div>
 										</div>
 									</div>
@@ -662,7 +662,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option2'>Staff Only</td>
+							<td class='option2'>Только для персонала</td>
 							<td class='option2' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'staff', $staff ) ."
 							</td>
@@ -676,7 +676,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info6' style='display: none;'>
 										<div>
-											If set to yes, this field will only be visible and editable by staff who have access to the ACP.  This is useful for storing information regarding clients that only staff should see.
+											Если установлено значение Да, то это поле будет только видимым и редактируемым сотрудникам, которые имеют доступ к Административной Контрольной Панели. Это полезно для хранения информации о клиентах, только сотрудники должны их видеть.
 										</div>
 										</div>
 									</div>
@@ -685,7 +685,7 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "<tr>
-							<td class='option1' valign='top'>Group Permissions</td>
+							<td class='option1' valign='top'>Разрешения для Групп</td>
 							<td class='option1'>
 								<select name='perms[]' id='perms' size='5' multiple='multiple'>
 								". $this->ifthd->build_group_drop( $perms ) ."
@@ -701,7 +701,7 @@ class ad_cpfields {
 										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
 										<div id='info7' style='display: none;'>
 										<div>
-											Select the groups in which this custom field should be made available to.  You can select more than one group.
+											Выберите группы, в которых это поле будет доступным. Вы можете выбрать более одной группы.
 										</div>
 										</div>
 									</div>
@@ -710,18 +710,18 @@ class ad_cpfields {
 		}
 		
 		$this->output .= "</table>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Field' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Редактировать поле' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Custom Profile Fields</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление/a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Настраиваемые поля профиля</a>",
 						   "Edit Department",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Custom Profile Fields' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление настраиваемыми полями профиля' ) );
 	}
 
 	#=======================================
@@ -737,24 +737,24 @@ class ad_cpfields {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->add_field('Please enter a name.');
+			$this->add_field('Пожалуйста, введите название.');
 		}
 
 		if ( strlen( $this->ifthd->input['fkey'] ) < 3 )
 		{
-			$this->add_field('Please enter a key.');
+			$this->add_field('Пожалуйста, введите ключ.');
 		}
 
 		if ( ! $this->key_check( $this->ifthd->input['fkey'] ) )
 		{
-			$this->add_field('Your key must be alphanumeric, lowercase, and contain no spaces.');
+			$this->add_field('Ваш ключ может содержать только цифры и буквы латинского алфавита в нижнем регистре и без пробелов.');
 		}
 
 		if ( $this->ifthd->input['type'] == 'dropdown' )
 		{
 			if ( strlen( $this->ifthd->input['fextra'] ) < 3 )
 			{
-				$this->add_field('Please enter drop-down values in the extra textbox.');
+				$this->add_field('Пожалуйста, введите значения для выпадающего списка в дополнительном текстовом поле.');
 			}
 		}
 
@@ -762,7 +762,7 @@ class ad_cpfields {
 		{
 			if ( strlen( $this->ifthd->input['fextra'] ) < 3 )
 			{
-				$this->add_field('Please enter radio values in the extra textbox.');
+				$this->add_field('Пожалуйста, введите значения для радио кнопки в дополнительное текстовое поле.');
 			}
 		}
 
@@ -803,7 +803,7 @@ class ad_cpfields {
 
 		$field_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'admin', "Profile Field Added &#039;". $this->ifthd->input['name'] ."&#039;", 1, $field_id );
+		$this->ifthd->log( 'admin', "Поле для Профиля добавлено &#039;". $this->ifthd->input['name'] ."&#039;", 1, $field_id );
 
 		#=============================
 		# Rebuild Cache
@@ -816,7 +816,7 @@ class ad_cpfields {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=cpfields&code=list', 'add_pfield_success' );
-		$this->list_fields( '', 'The custom profile field has been successfully added.' );
+		$this->list_fields( '', 'Настраиваемое поле профиля успешно добавлено.' );
 	}
 
 	#=======================================
@@ -848,24 +848,24 @@ class ad_cpfields {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->edit_field('Please enter a name.');
+			$this->edit_field('Пожалуйста, введите название.');
 		}
 
 		if ( strlen( $this->ifthd->input['fkey'] ) < 3 )
 		{
-			$this->edit_field('Please enter a key.');
+			$this->edit_field('Пожалуйста, введите ключ.');
 		}
 
 		if ( ! $this->key_check( $this->ifthd->input['fkey'] ) )
 		{
-			$this->edit_field('Your key must be alphanumeric, lowercase, and contain no spaces.');
+			$this->edit_field('Ваш ключ может содержать только цифры и буквы латинского алфавита в нижнем регистре и без пробелов.');
 		}
 
 		if ( $this->ifthd->input['type'] == 'dropdown' )
 		{
 			if ( strlen( $this->ifthd->input['fextra'] ) < 3 )
 			{
-				$this->edit_field('Please enter drop-down values in the extra textbox.');
+				$this->edit_field('Пожалуйста, введите значения для выпадающего списка в дополнительном текстовом поле.');
 			}
 		}
 
@@ -873,7 +873,7 @@ class ad_cpfields {
 		{
 			if ( strlen( $this->ifthd->input['fextra'] ) < 3 )
 			{
-				$this->edit_field('Please enter radio values in the extra textbox.');
+				$this->edit_field('Пожалуйста, введите значения для радио кнопки в дополнительное текстовое поле.');
 			}
 		}
 
@@ -913,7 +913,7 @@ class ad_cpfields {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Profile Field Edited &#039;". $this->ifthd->input['name'] ."&#039;", 1, $this->ifthd->input['id'] );
+		$this->ifthd->log( 'admin', "Поле для Профиля отредактировано &#039;". $this->ifthd->input['name'] ."&#039;", 1, $this->ifthd->input['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -926,7 +926,7 @@ class ad_cpfields {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=cpfields&code=list', 'edit_pfield_success' );
-		$this->list_fields( '', 'The custom profile field has been successfully updated.' );
+		$this->list_fields( '', 'Настраиваемое поле профиля успешно обновлено.' );
 	}
 
 	#=======================================
@@ -970,7 +970,7 @@ class ad_cpfields {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Profile Field Deleted &#039;". $f['name'] ."&#039;", 2, $f['id'] );
+		$this->ifthd->log( 'admin', "Поле для Профиля удалено &#039;". $f['name'] ."&#039;", 2, $f['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -983,7 +983,7 @@ class ad_cpfields {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=cpfields&code=list', 'delete_pfield_success' );
-		$this->list_fields( 'The custom profile field has been successfully deleted.' );
+		$this->list_fields( 'Настраиваемое поле профиля успешно удалено.' );
 	}
 
 	#=======================================
