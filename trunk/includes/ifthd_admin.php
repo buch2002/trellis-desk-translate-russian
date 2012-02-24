@@ -165,16 +165,16 @@ class ifthd_admin extends ifthd {
 						THIS PRODUCT.  IF THIS HAPPENS, IT COULD RESULT IN REMOVAL OF THIS
 						SYSTEM AND POSSIBLY CRIMINAL CHARGES.  THANK YOU FOR UNDERSTANDING -->
 						
-						<div class='groupbox'>Version Information</div>
+						<div class='groupbox'>Версия</div>
 						<div class='option1'>
-							Build: {$this->vernum} | PHP Version: ". phpversion() ." | MySQL Version: ". mysql_get_server_info() ."<br /><a href='http://www.accord5.com/trellis'>Trellis Desk</a> {$this->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a>
+							Сборка: {$this->vernum} | PHP версия: ". phpversion() ." | MySQL версия: ". mysql_get_server_info() ."<br /><a href='http://www.accord5.com/trellis'>Trellis Desk</a> {$this->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a>
 						</div>
 						
 						<br />
 						
-						<div class='groupbox'>About</div>
+						<div class='groupbox'>О Trellis Desk</div>
 						<div class='option1' style='font-weight: normal'>
-							Trellis Desk is a free help desk system that is designed to be easy to use, powerful, and clean.  <a href='http://www.sogonphp.com/'>DJ</a> codes Trellis Desk during his free time, his goal to make a free help desk system just as good as many commercial systems.  <a href='http://www.accord5.com/trellis/download'>Click here</a> for License Agreement.
+							Trellis Desk является свободной системой службы поддержки, которыя разработана для простоты в использовании. Цель Trellis Desk, сделать свободную и хорошую систему поддержки как многие коммерчиские системы. <a href='http://www.accord5.com/trellis/download'>Нажмите здесь</a> для получения Лицензионного Соглашения.
 						</div>
 						
 						<br />
@@ -196,7 +196,7 @@ class ifthd_admin extends ifthd {
 						
 						<br />
 						
-						<div class='groupbox'>Special Thanks</div>
+						<div class='groupbox'>Особая благодарность</div>
 						<div class='option1'>
 							<a href='http://forums.accord5.com/index.php?showuser=2'>Aaron</a> <span class='desc'>- I can't thank you enough for all the help you've given me and your kindness.  I really love working with you.</span><br />
 							<a href='http://forums.accord5.com/index.php?showuser=5'>Ryan</a> <span class='desc'>- Thanks so much for your hard work.  You have helped make Trellis Desk a success.</span><br /> 
@@ -212,7 +212,19 @@ class ifthd_admin extends ifthd {
 						
 						<br />
 						
-						<div class='groupbox'>Other</div>
+						<div class='groupbox'>Перевод и локализация</div>
+						<div class='option1'>
+						<span class='desc'><b>Русский язык: </b>Получить русификацию можно скачав архив </span><a href='http://code.google.com/p/trellis-desk-translate-russian/downloads/detail?name=language_ru_trellis_desk.zip&can=2&q='>language_ru_trellis_desk.zip </a> <span class='desc'>или воспользоваться SVN для получения самого свежайшего перевода.</span><br />
+						<span class='desc'>Обновления с помощью коммандной строки. Используйте эту команду, чтобы анонимно проверить обновления исходного кода проекта:</span><br />
+						<code>svn checkout http://trellis-desk-translate-russian.googlecode.com/svn/trunk/ trellis-desk-translate-russian-read-only</code><br><br>
+						
+						<span class='desc'><b>Українська мова: </b>У проекті на <b>code.google.com</b>, після завершення перекладу на россійську мову. Бажаючим внести свій вклад у переклад українською - прошу звертатись.</span><br />
+						
+						</div>
+						
+						<br />
+						
+						<div class='groupbox'>Прочее</div>
 						<div class='option1'>
 							<a href='http://www.php.net/'><img src='<! IMG_DIR !>/logos/php.png' alt='PHP' /></a> <a href='http://www.mysql.com/'><img src='<! IMG_DIR !>/logos/mysql.png' alt='MySQL' /></a> <a href='http://www.zend.com/'><img src='<! IMG_DIR !>/logos/zend.png' alt='Zend' /></a> <a href='http://tinymce.moxiecode.com/'><img src='<! IMG_DIR !>/logos/tinymce.png' alt='TinyMCE' /></a> <a href='http://validator.w3.org/check?uri=referer'><img src='<! IMG_DIR !>/logos/xhtml10.png' alt='XHML' /></a> <a href='http://jigsaw.w3.org/css-validator/'><img src='<! IMG_DIR !>/logos/vcss.png' alt='CSS' /></a><br />
 							<a href='http://www.feedvalidator.org/'><img src='<! IMG_DIR !>/logos/vrss.png' alt='Valid RSS' /></a> <img src='<! IMG_DIR !>/logos/feed.png' alt='Feed' />
@@ -224,7 +236,7 @@ class ifthd_admin extends ifthd {
 						   "Trellis Desk Info",
 						   );
 
-		$this->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Trellis Desk Information' ) );
+		$this->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Информация Trellis Desk' ) );
 	}
 
 }

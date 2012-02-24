@@ -159,7 +159,7 @@ class skin {
 		$query_s_count = $this->ifthd->core->db->get_query_s_count();
 		$exe_time = $this->ifthd->end_timer();
 
-		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Queries</span> // ". $exe_time ." Seconds</div>";
+		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Запрос(ов)</span> // ". $exe_time ." Секунд</div>";
 
 		#=============================
 		# Global Variables
@@ -253,7 +253,7 @@ class skin {
 		/* SYSTEM AND POSSIBLY CRIMINAL CHARGES.  THANK YOU FOR UNDERSTANDING */
 		/***********************************************************************/
 
-		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Queries</span> // ". $exe_time ." Seconds</div>";
+		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Запрос(ов)</span> // ". $exe_time ." Секунд</div>";
 
 		#=============================
 		# Global Variables
@@ -341,7 +341,7 @@ class skin {
 		$query_s_count = $this->ifthd->core->db->get_query_s_count();
 		$exe_time = $this->ifthd->end_timer();
 
-		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Queries</span> // ". $exe_time ." Seconds</div>";
+		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Запрос(ов)</span> // ". $exe_time ." Секунд</div>";
 
 		#=============================
 		# Global Variables
@@ -455,7 +455,7 @@ class skin {
 		$query_s_count = $this->ifthd->core->db->get_query_s_count();
 		$exe_time = $this->ifthd->end_timer();
 
-		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Queries</span> // ". $exe_time ." Seconds</div>";
+		$copyright = "<div id='copyright'>Powered By <a href='http://www.accord5.com/products/trellis/'>Trellis Desk</a> {$this->ifthd->vername} &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a><br /><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Запрос(ов)</span> // ". $exe_time ." Секунд</div>";
 
 		#=============================
 		# Global Variables

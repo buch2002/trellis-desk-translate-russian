@@ -97,9 +97,8 @@ You have submitted a new ticket.  Our staff will review the ticket shortly and r
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
-Отдел: <#DEPARTMENT#>
-Priority: <#PRIORITY#>
+Тема: <#SUBJECT#>
+Отдел: <#DEPARTMENT#>Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
 
 ---------------------------
@@ -116,7 +115,7 @@ A new ticket has been created in your department.  Below are the ticket details.
 
 Тиккет ID: <#TICKET_ID#>
 Пользователь Member: <#MEMBER#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
 Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
@@ -138,7 +137,7 @@ You have submitted a new guest ticket.  Our staff will review the ticket shortly
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
 Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
@@ -163,7 +162,7 @@ A new guest ticket has been created in your department.  Below are the ticket de
 
 Тикет ID: <#TICKET_ID#>
 Member: <#MEMBER#> (Guest)
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
 Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
@@ -185,7 +184,7 @@ One of your tickets has been escalated.  Our managers will be reviewing your tic
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
 Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
@@ -203,9 +202,9 @@ One of your tickets has been closed.  Below are the ticket details.
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
-Priority: <#PRIORITY#>
+Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
 
 ---------------------------
@@ -223,7 +222,7 @@ One of your tickets has been moved to a new department.  Below are the ticket de
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Старый отдел: <#OLD_DEPARTMENT#>
 Новый отдел: <#NEW_DEPARTMENT#>
 Приоритет: <#PRIORITY#>
@@ -248,9 +247,9 @@ A reply has been made to your ticket.  Below are the ticket details.
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
-Priority: <#PRIORITY#>
+Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
 
 ---------------------------
@@ -273,9 +272,9 @@ A reply has been made to your ticket.  Below are the ticket details.
 
 Тикет ID: <#TICKET_ID#>
 Ticket Key: <#TICKET_KEY#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
-Priority: <#PRIORITY#>
+Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
 
 ---------------------------
@@ -298,9 +297,9 @@ A reply has been made to a ticket in your department.  Below are the ticket deta
 
 Тикет ID: <#TICKET_ID#>
 Member: <#MEMBER#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 Отдел: <#DEPARTMENT#>
-Priority: <#PRIORITY#>
+Приоритет: <#PRIORITY#>
 Дата Submitted: <#SUB_DATE#>
 
 ---------------------------
@@ -341,14 +340,14 @@ We were unable to accept your email and add your reply because the ticket is clo
 ---------------------------
 
 Тикет ID: <#TICKET_ID#>
-Subject: <#SUBJECT#>
+Тема: <#SUBJECT#>
 
 ---------------------------
 
 If you feel this message is an error, please contact an administrator.
 EOF;
 
-$lang['ticket_pipe_rejected_sub'] = "Ticket Not Accepted";
+$lang['ticket_pipe_rejected_sub'] = "Тиккет не принят";
 
 $lang['ticket_pipe_rejected'] = <<<EOF
 We were unable to accept your email and create a ticket because you do not have permission to create tickets in this department.
@@ -356,7 +355,7 @@ We were unable to accept your email and create a ticket because you do not have 
 If you feel this message is an error, please contact an administrator.
 EOF;
 
-$lang['new_user_admin_val_sub'] = "New Registration: <#USER_NAME#>";
+$lang['new_user_admin_val_sub'] = "Регистрация нового пользователя: <#USER_NAME#>";
 
 $lang['new_user_admin_val'] = <<<EOF
 A new member has registered as is awaiting admin validation.  Below are the member details.
@@ -365,7 +364,7 @@ A new member has registered as is awaiting admin validation.  Below are the memb
 
 Member: <#USER_NAME#>
 Email: <#USER_EMAIL#>
-Date Joined: <#JOIN_DATE#>
+Дата регистрации: <#JOIN_DATE#>
 
 ---------------------------
 
