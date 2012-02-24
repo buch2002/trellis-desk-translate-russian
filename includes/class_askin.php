@@ -47,7 +47,7 @@ class askin {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Trellis Desk :: Administration Control Panel</title>
+	<title>Trellis Desk :: Административная панель управления</title>
 	<style type="text/css" media="all">
 		@import "<! HD_URL !>/includes/global.css";
 		@import "<! HD_URL !>/includes/local.css";
@@ -65,7 +65,7 @@ class askin {
         <% H_R_LINKS %>
         </div>
         <div class="lefty">
-        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Trellis Desk Administration Control Panel" width="367" height="56" />
+        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Административная панель управления Trellis Desk" width="367" height="56" />
         </div>
     </div>
 
@@ -139,7 +139,7 @@ EOF;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Trellis Desk :: Administration Control Panel</title>
+	<title>Trellis Desk :: Административная панель управления</title>
 	<style type="text/css" media="all">
 		@import "<! HD_URL !>/includes/global.css";
 		@import "<! HD_URL !>/includes/local.css";
@@ -155,7 +155,7 @@ EOF;
         <% H_R_LINKS %>
         </div>
         <div class="lefty">
-        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Trellis Desk Administration Control Panel" width="367" height="56" />
+        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Административная панель управления Trellis Desk" width="367" height="56" />
         </div>
     </div>
 
@@ -175,10 +175,10 @@ EOF;
         <div id="acpblock">
         
         	<!-- GLOBAL: Page ID -->
-            <p class="pageid">Administration Control Panel</p>
+            <p class="pageid">Административная панель управления</p>
             
             <!-- GLOBAL: Info bar -->
-            <div id="infobar">Manage your help desk settings, content, and appearance using your Administration Control Panel.</div>
+            <div id="infobar">Управляйте вашим HelpDesk, содержание и внешний вид настраивается с помощью Административной панели управления.</div>
             
             <!-- GLOBAL: ACP inner container -->
             <!-- This is where the action happens! -->
@@ -229,7 +229,7 @@ EOF;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Trellis Desk :: Administration Control Panel</title>
+	<title>Trellis Desk :: Административная панель управления</title>
 	<style type="text/css" media="all">
 		@import "<! HD_URL !>/includes/global.css";
 		@import "<! HD_URL !>/includes/local.css";
@@ -245,7 +245,7 @@ EOF;
         &nbsp;
         </div>
         <div class="lefty">
-        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Trellis Desk Administration Control Panel" width="367" height="56" />
+        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Административная панель управления Trellis Desk" width="367" height="56" />
         </div>
     </div>
 
@@ -265,10 +265,10 @@ EOF;
         <div id="acpblock">
         
         	<!-- GLOBAL: Page ID -->
-            <p class="pageid">Administration Control Panel</p>
+            <p class="pageid">Административная панель управления</p>
             
             <!-- GLOBAL: Info bar -->
-            <div id="infobar">Manage your help desk settings, content, and appearance using your Administration Control Panel.</div>
+            <div id="infobar">Управляйте вашим HelpDesk, содержание и внешний вид настраивается с помощью Административной панели управления.</div>
             
             <!-- GLOBAL: ACP inner container -->
             <!-- This is where the action happens! -->
@@ -323,7 +323,7 @@ EOF;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Trellis Desk :: Administration Control Panel</title>
+	<title>Trellis Desk :: Административная панель управления</title>
 	<style type="text/css" media="all">
 		@import "<! HD_URL !>/includes/global.css";
 		@import "<! HD_URL !>/includes/local.css";
@@ -339,7 +339,7 @@ EOF;
         &nbsp;
         </div>
         <div class="lefty">
-        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Trellis Desk Administration Control Panel" width="367" height="56" />
+        <img src="<! IMG_DIR !>/acp_logo.jpg" alt="Административная панель управления Trellis Desk" width="367" height="56" />
         </div>
     </div>
 
@@ -359,10 +359,10 @@ EOF;
         <div id="acpblock">
         
         	<!-- GLOBAL: Page ID -->
-            <p class="pageid">Administration Control Panel</p>
+            <p class="pageid">Административная панель управления</p>
             
             <!-- GLOBAL: Info bar -->
-            <div id="infobar">Manage your help desk settings, content, and appearance using your Administration Control Panel.</div>
+            <div id="infobar">Управляйте вашим HelpDesk, содержание и внешний вид настраивается с помощью Административной панели управления.</div>
             
             <!-- GLOBAL: ACP inner container -->
             <!-- This is where the action happens! -->
@@ -418,50 +418,50 @@ EOF;
 		{
 			$sidebar = <<<EOF
             	<div id="acpmenu">
-					<div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets'>Ticket Control</a></div>
+					<div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets'>Работа с тиккетами</a></div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets&amp;code=list'>Manage Tickets</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=list'>Manage Departments</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add'>Add Department</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cdfields'>Custom Department Fields</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Manage Canned Replies</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets&amp;code=list'>Управление тиккетами</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=list'>Управление отделами</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add'>Добавить отдел</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cdfields'>Пользовательские поля отдела</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Управление шаблонами ответов</a></li>
                     </ul>
 
-                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Announcement Control</a></div>
+                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce'>Работа с объявлениями</a></div>
                 	<ul>
-                  	 	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=list'>Manage Announcements</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=add'>Add Announcement</a></li>
+                  	 	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=list'>Управление объявлениями</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=announce&amp;code=add'>Добавить объявление</a></li>
                     </ul>
 
-                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member'>Member Control</a></div>
+                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member'>Работа с пользователями</a></div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=list'>Manage Members</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=list'>Manage Groups</a></li>
-                   	 	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=mod'>Approve Members</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=add'>Add A New Member</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=add'>Add A New Group</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Custom Profile Fields</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=list'>Управление пользователями</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=list'>Управление группами</a></li>
+                   	 	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=mod'>Утверждение пользователей</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member&amp;code=add'>Добавить нового пользователя</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=add'>Добавить новую группу</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cpfields'>Дополнительные поля профиля</a></li>
                     </ul>
 
-                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>KB / Pages Control</a></div>
+                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb'>База знаний / Пользовательские элементы управления страницей</a></div>
                 	<ul>
-	                   	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list'>Manage Articles</a></li>
-	                   	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=list'>Manage Categories</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=add'>Add A New Article</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=pages&amp;code=add'>Add A New Custom Page</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=pages&amp;code=list'>Manage Custom Pages</a></li>
+	                   	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=list'>Управление статьями</a></li>
+	                   	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kbcat&amp;code=list'>Управление категориями</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=add'>Добавить новую статью</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=pages&amp;code=add'>Добавить новую пользовательскую страницу</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=pages&amp;code=list'>Управление пользовательскими страницами</a></li>
                     </ul>
 
-                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>System Settings</a></div>
+                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>Настройки системы</a></div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>View All Settings</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=general'>General Configuration</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=security'>Security &amp; Privacy</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=ticket'>Ticket Settings</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb'>Knowledge Base Settings</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>Все параметры</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=general'>Общие настройки</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=security'>Безопасность и конфиденциальность</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=ticket'>Настройки тиккетов</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=find&amp;group=kb'>Настройки Базы Знаний</a></li>
                     </ul>
 					<div id="acphelp">
-                		<a href="http://docs.accord5.com">View product documentation</a>
+                		<a href="http://docs.accord5.com">Просмотр документации по продукту (ENG)</a>
                 	</div>
             	</div>
 EOF;
@@ -473,37 +473,37 @@ EOF;
             	<div id="acpmenu">
                     <div class="menucat">Trellis Desk</div>
                 	<ul>
-                   		<li><a href='http://www.accord5.com/trellis'>Product Page</a></li>
-                    	<li><a href='http://docs.accord5.com/trellis'>Documentation</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?act=tdinfo'>Trellis Desk Info</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?act=phpinfo'>PHP Info</a></li>
+                   		<li><a href='http://www.accord5.com/trellis'>Страница продукта</a></li>
+                    	<li><a href='http://docs.accord5.com/trellis'>Документация</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?act=tdinfo'>Trellis Desk Инфо</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?act=phpinfo'>PHP Инфо</a></li>
                     </ul>
 
-                   	<div class="menucat">Maintenance</div>
+                   	<div class="menucat">Обслуживание</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=recount'>Recount Functions</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=rebuild'>Rebuild Functions</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=clean'>Spring Cleaning</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=syscheck'>System Check</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=recount'>Пересчет функции</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=rebuild'>Перестроение функций</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=clean'>Генеральная уборка</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=syscheck'>Проверка системы</a></li>
                     </ul>
 
-                	<div class="menucat">Backups &amp; Updates</div>
+                	<div class="menucat">Резервное копирование и обновление</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=full'>Full Backup</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=sql'>SQL Backup</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=file'>File Backup</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=full'>Полное резервное копирование</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=sql'>Резервное копирование SQL</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=backup&amp;code=file'>Резервное копирование Файлов</a></li>
                     </ul>
 
-                    <div class="menucat">Log Center</div>
+                    <div class="menucat">Журналирование- логи</div>
                 	<ul>
-                  	 	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=admin'>Admin Logs</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=member'>Member Logs</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=error'>Error Logs</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=security'>Security Logs</a></li>
-                   	 	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=ticket'>Ticket Logs</a></li>
+                  	 	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=admin'>Логи Администратор</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=member'>Логи Пользователи</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=error'>Логи Ошибки</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=security'>Логи Безопасность</a></li>
+                   	 	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=ticket'>Логи Тиккет</a></li>
                     </ul>
 					<div id="acphelp">
-                		<a href="http://docs.accord5.com">View product documentation</a>
+                		<a href="http://docs.accord5.com">Просмотр документации по продукту (ENG)</a>
                 	</div>
             	</div>
 EOF;
@@ -513,23 +513,23 @@ EOF;
 		{
 			$sidebar = <<<EOF
             	<div id="acpmenu">
-                    <div class="menucat">Manage Skins</div>
+                    <div class="menucat">Управление шкурами</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=manage'>Manage Skins</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=tools'>Skin Tools</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=import'>Import Skin</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=export'>Export Skin</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=manage'>Управление шкурами</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=tools'>Инструменты для шкур</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=import'>Импортировать шкуру</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=export'>Экспортировать шкуру</a></li>
                     </ul>
 
-                    <div class="menucat">Manage Languages</div>
+                    <div class="menucat">Управление языками</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=manage'>Manage Languages</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=tools'>Language Tools</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=import'>Import Language</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=export'>Export Language</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=manage'>Управление языками</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=tools'>Инструменты для языка</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=import'>Импортировать язык</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=export'>Экспортировать язык</a></li>
                     </ul>
 					<div id="acphelp">
-                		<a href="http://docs.accord5.com">View product documentation</a>
+                		<a href="http://docs.accord5.com">Просмотр документации по продукту (ENG)</a>
                 	</div>
             	</div>
 EOF;
@@ -541,39 +541,39 @@ EOF;
             	<div id="acpmenu">
                     <div class="menucat">Trellis Desk</div>
                 	<ul>
-                   		<li><a href='http://www.accord5.com/trellis'>Product Page</a></li>
-                    	<li><a href='http://docs.accord5.com/trellis'>Documentation</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?act=tdinfo'>Trellis Desk Info</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?act=phpinfo'>PHP Info</a></li>
+                   		<li><a href='http://www.accord5.com/trellis'>Страница продукта</a></li>
+                    	<li><a href='http://docs.accord5.com/trellis'>Документация</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?act=tdinfo'>Trellis Desk Инфо</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?act=phpinfo'>PHP Инфо</a></li>
                     </ul>
 
-                    <div class="menucat">Quick Links</div>
+                    <div class="menucat">Навигация</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=acpperm'>ACP Permissions</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=syscheck'>System Check</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>System Settings</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member'>Manage Members</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=group&amp;code=acpperm'>ACP разрешения</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=tools&amp;act=maint&amp;code=syscheck'>Проверка системы</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings'>Настройки системы</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=member'>Управление пользователями</a></li>
                     </ul>
 
-                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets'>Ticket Control</a></div>
+                    <div class="menucat"><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets'>Работа с тиккетами</a></div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets&amp;code=list'>Manage Tickets</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=list'>Manage Departments</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add'>Add Department</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cdfields'>Custom Department Fields</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Manage Canned Replies</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets&amp;code=list'>Управление тиккетами</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=list'>Управление отделами</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add'>Добавить отдел</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=cdfields'>Пользовательские поля отдела</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Управление шаблонами ответов</a></li>
                     </ul>
 
-                    <div class="menucat">Log Center</div>
+                    <div class="menucat">Журналирование- логи</div>
                 	<ul>
-                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=admin'>Admin Logs</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=member'>Member Logs</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=error'>Error Logs</a></li>
-                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=security'>Security Logs</a></li>
-                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=ticket'>Ticket Logs</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=admin'>Логи Администратор</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=member'>Логи Пользователи</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=error'>Логи Ошибки</a></li>
+                   		<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=security'>Логи Ошибки</a></li>
+                    	<li><a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=ticket'>Логи Тиккет</a></li>
                     </ul>
 					<div id="acphelp">
-                		<a href="http://docs.accord5.com">View product documentation</a>
+                		<a href="http://docs.accord5.com">Просмотр документации по продукту (ENG)</a>
                 	</div>
             	</div>
 EOF;
@@ -591,11 +591,11 @@ EOF;
 	function build_tabs($current)
 	{
 		$tabs = array(
-						'<! HD_URL !>/admin.php?section=admin' => array( 'Administration Home', 'admin' ),
-						'<! HD_URL !>/admin.php?section=manage' => array( 'Management', 'manage' ),
-						'<! HD_URL !>/admin.php?section=look' => array( 'Look &amp; Feel', 'look' ),
-						'<! HD_URL !>/admin.php?section=tools' => array( 'Tools &amp; Maintenance', 'tools' ),
-						'http://customer.accord5.com/trellis/' => array( 'Help &amp; Support' ),
+						'<! HD_URL !>/admin.php?section=admin' => array( 'Администрация Главная', 'admin' ),
+						'<! HD_URL !>/admin.php?section=manage' => array( 'Управление системой', 'manage' ),
+						'<! HD_URL !>/admin.php?section=look' => array( 'Оформление и языки', 'look' ),
+						'<! HD_URL !>/admin.php?section=tools' => array( 'Инструменты и обслуживание', 'tools' ),
+						'http://customer.accord5.com/trellis/' => array( 'Помощь и поддержка' ),
 					);
 		
 		$html = ""; // Initialize for Security
@@ -629,7 +629,7 @@ EOF;
 	
 	function head_right_links()
 	{
-		return 'Logged in as '. $this->ifthd->member['name'] .' <a href="<! HD_URL !>/index.php">Return to Helpdesk</a> <a href="<! HD_URL !>/admin.php?act=logout">Logout</a>';
+		return 'Вы вошли как '. $this->ifthd->member['name'] .' <a href="<! HD_URL !>/index.php">Перейти в Helpdesk</a> <a href="<! HD_URL !>/admin.php?act=logout">Выход</a>';
 	}
 
 	#=======================================
@@ -650,26 +650,26 @@ EOF;
         {
         	if ( $revert )
         	{
-	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Yes</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> No</label></div>";
+	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Да</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Нет</label></div>";
         	}
         	else
         	{
-        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Yes</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> No</label>";
+        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Да</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Нет</label>";
         	}
         }
         else
         {
         	if ( $revert )
         	{
-	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Yes</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> No</label></div>";
+	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Да</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Нет</label></div>";
         	}
         	else
         	{
-        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Yes</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> No</label>";
+        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Да</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Нет</label>";
         	}
         }
 
@@ -694,26 +694,26 @@ EOF;
         {
         	if ( $revert )
         	{
-	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Enabled</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Disabled</label></div>";
+	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Включено</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Отключено</label></div>";
         	}
         	else
         	{
-        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Enabled</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Disabled</label>";
+        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' checked='checked' /> Включено</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' /> Отключено</label>";
         	}
         }
         else
         {
         	if ( $revert )
         	{
-	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Enabled</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Disabled</label></div>";
+	        	$html = "<div style='float:right;margin:-2px 0'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=settings&amp;code=revert&amp;id={$id}'><img src='<! IMG_DIR !>/revert_icon.gif' alt='Revert' /></a></div><div align='left'><label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Включено</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Отключено</label></div>";
         	}
         	else
         	{
-        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Enabled</label>&nbsp;&nbsp;";
-	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Disabled</label>";
+        		$html = "<label for='{$input_name}1'><input type='radio' name='{$input_name}' id='{$input_name}1' value='1' class='radio' /> Включено</label>&nbsp;&nbsp;";
+	        	$html .= "<label for='{$input_name}0'><input type='radio' name='{$input_name}' id='{$input_name}0' value='0' class='radio' checked='checked' /> Отключено</label>";
         	}
         }
 
@@ -926,7 +926,7 @@ EOF;
 		# Navigation
 		#=============================
 
-		$nav_tree = '<div id="navstrip">&raquo; <a href="<! HD_URL !>/admin.php">Home</a>'; // Initialize for Security
+		$nav_tree = '<div id="navstrip">&raquo; <a href="<! HD_URL !>/admin.php">Домой</a>'; // Initialize for Security
 
 		if ( is_array( $nav_links ) )
 		{
@@ -962,7 +962,7 @@ EOF;
 		$exe_time = $this->ifthd->end_timer();
 
 		$copyright = "<div id='powerbar'>
-            	<div class='righty'><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Queries</span> // ". $exe_time ." Seconds</div>
+            	<div class='righty'><span title='". $query_count ." Normal | ". $query_s_count ." Shutdown'>". $query_count ." Запрос(ов)</span> // ". $exe_time ." Секунд</div>
                 <div class='lefty'>Powered by Trellis Desk {$this->ifthd->vername}, &copy; ". date('Y') ." <a href='http://www.accord5.com/'>ACCORD5</a></div>
             </div>";
 
@@ -1165,7 +1165,7 @@ EOF;
 		# Navigation
 		#=============================
 
-		$nav_tree = '&raquo; <a href="<! HD_URL !>/admin.php">Home</a>'; // Initialize for Security
+		$nav_tree = '&raquo; <a href="<! HD_URL !>/admin.php">Домой</a>'; // Initialize for Security
 
 		if ( is_array( $nav_links ) )
 		{

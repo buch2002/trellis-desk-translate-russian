@@ -249,14 +249,14 @@ class mailparse {
 		
 		if ( ! $email['from'] || ! $email['to'] || ! $email['subject'] )
 		{
-			$this->ifthd->log( 'error', "Email Missing Information" );
+			$this->ifthd->log( 'error', "Email Отсутствует информация" );
 		
 			return false;
 		}
 		
 		if ( ! $this->ifthd->validate_email( $email['from'] ) )
 		{
-			$this->ifthd->log( 'error', "Email Invalid Address" );
+			$this->ifthd->log( 'error', "Неправильный адрес Email" );
 		
 			return false;
 		}
@@ -287,7 +287,7 @@ class mailparse {
 			
 			if ( $this->ifthd->core->db->get_num_rows() > 5 )
 			{
-				$this->ifthd->log( 'security', "Flood Limit Email: ". $email['from'] );
+				$this->ifthd->log( 'security', "Email лимит флуда: ". $email['from'] );
 		
 				return false;
 			}
@@ -308,7 +308,7 @@ class mailparse {
 		
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'error', "Department Not Found Email: ". $email['to'] );
+			$this->ifthd->log( 'error', "Отдел не найден Email: ". $email['to'] );
 		
 			return false;
 		}
@@ -484,7 +484,7 @@ class mailparse {
 		
 		if ( ! $message )
 		{
-			$this->ifthd->log( 'error', "Email Missing Message" );
+			$this->ifthd->log( 'error', "Отсутствует сообщение электронной почты" );
 		
 			return false;
 		}
@@ -514,7 +514,7 @@ class mailparse {
 				{
 					if ( ! $perms[ $t['did'] ] )
 					{
-						$this->ifthd->log( 'security', "Email Staff Reply Permission Denied: ". $t['subject'] );
+						$this->ifthd->log( 'security', "Запрещено персоналу отвечать Email: ". $t['subject'] );
 		
 						return false;
 					}
@@ -526,7 +526,7 @@ class mailparse {
 				{
 					if ( $m['id'] != $t['mid'] )
 					{
-						$this->ifthd->log( 'security', "Email Member Reply Permission Denied: ". $t['subject'] );
+						$this->ifthd->log( 'security', "Запрещено пользователям отвечать Email: ". $t['subject'] );
 		
 						return false;
 					}
@@ -535,7 +535,7 @@ class mailparse {
 				{
 					if ( $email['from'] != $t['email'] )
 					{
-						$this->ifthd->log( 'security', "Email Guest Reply Permission Denied: ". $t['subject'] );
+						$this->ifthd->log( 'security', "Запрещено гостям отвечать Email: ". $t['subject'] );
 		
 						return false;
 					}
@@ -554,7 +554,7 @@ class mailparse {
 		
 					$this->ifthd->core->db->execute();
 					
-					$this->ifthd->log( 'ticket', "Ticket Reopened &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
+					$this->ifthd->log( 'ticket', "Тиккет открыт повторно &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
 					
 					if ( $m['g_acp_access'] )
 					{
@@ -598,7 +598,7 @@ class mailparse {
 						$this->ifthd->send_guest_email( $email['from'], 'reply_pipe_closed', $replace, array( 'from_email' => $d['incoming_email'] ) );
 					}
 					
-					$this->ifthd->log( 'error', "Reply Rejected Ticket Closed &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
+					$this->ifthd->log( 'error', "Ответ отклонен, тиккет закрыт &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
 			
 					return false;
 				}
@@ -649,8 +649,8 @@ class mailparse {
 		
 								$attachment_id = $this->ifthd->core->db->get_insert_id();
 		
-								$this->ifthd->log( 'ticket', "Uploaded Attachment #". $attachment_id, 1, $t['id'] );
-								$this->ifthd->log( 'member', "Uploaded Attachment #". $attachment_id, 1, $attachment_id );
+								$this->ifthd->log( 'ticket', "Загружено вложение #". $attachment_id, 1, $t['id'] );
+								$this->ifthd->log( 'member', "Загружено вложение #". $attachment_id, 1, $attachment_id );
 							}
 						}
 					}
@@ -692,8 +692,8 @@ class mailparse {
 		
 			$reply_id = $this->ifthd->core->db->get_insert_id();
 		
-			$this->ifthd->log( 'member', "Ticket Reply &#039;". $t['subject'] ."&#039;", 1, $reply_id );
-			$this->ifthd->log( 'ticket', "Ticket Reply &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
+			$this->ifthd->log( 'member', "Тиккет ответ &#039;". $t['subject'] ."&#039;", 1, $reply_id );
+			$this->ifthd->log( 'ticket', "Тиккет ответ &#039;". $t['subject'] ."&#039;", 1, $t['id'] );
 		
 			#=============================
 			# Email
@@ -887,7 +887,7 @@ class mailparse {
 					$this->ifthd->send_guest_email( $email['from'], 'ticket_pipe_rejected', $replace, array( 'from_email' => $d['incoming_email'] ) );
 				}
 		
-				$this->ifthd->log( 'security', "New Ticket to &#039;". $d['name'] ."&#039; Permission Denied", 1, $d['id'] );
+				$this->ifthd->log( 'security', "Новый тиккет &#039;". $d['name'] ."&#039; Доступ Запрещён", 1, $d['id'] );
 		
 				return false;
 			}
@@ -937,7 +937,7 @@ class mailparse {
 		
 								$attachment_id = $this->ifthd->core->db->get_insert_id();
 		
-								$this->ifthd->log( 'member', "Uploaded Attachment #". $attachment_id, 1, $attachment_id );
+								$this->ifthd->log( 'member', "Загружено вложение #". $attachment_id, 1, $attachment_id );
 							}
 						}
 					}
@@ -990,8 +990,8 @@ class mailparse {
 		
 			$ticket_id = $this->ifthd->core->db->get_insert_id();
 		
-			$this->ifthd->log( 'member', "Ticket Created &#039;". $email['subject'] ."&#039;", 1, $ticket_id );
-			$this->ifthd->log( 'ticket', "Ticket Created &#039;". $email['subject'] ."&#039;", 1, $ticket_id );
+			$this->ifthd->log( 'member', "Тиккет создан &#039;". $email['subject'] ."&#039;", 1, $ticket_id );
+			$this->ifthd->log( 'ticket', "Тиккет создан &#039;". $email['subject'] ."&#039;", 1, $ticket_id );
 			
 			#=============================
 			# Update Attachment
@@ -1009,7 +1009,7 @@ class mailparse {
 				$this->ifthd->core->db->next_shutdown();
 				$this->ifthd->core->db->execute();
 		
-				$this->ifthd->log( 'ticket', "Uploaded Attachment #". $attachment_id, 1, $ticket_id );
+				$this->ifthd->log( 'ticket', "Загружено вложение #". $attachment_id, 1, $ticket_id );
 			}
 		
 			#=============================

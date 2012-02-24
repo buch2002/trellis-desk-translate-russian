@@ -208,8 +208,8 @@ class asession {
 
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'admin', "ACP Failed Login Attempt &#039;". $this->ifthd->input['username'] ."&#039;", 2 );
-			$this->ifthd->log( 'security', "ACP Failed Login Attempt &#039;". $this->ifthd->input['username'] ."&#039;", 2 );
+			$this->ifthd->log( 'admin', "ACP Ошибка попытки входа &#039;". $this->ifthd->input['username'] ."&#039;", 2 );
+			$this->ifthd->log( 'security', "ACP Ошибка попытки входа &#039;". $this->ifthd->input['username'] ."&#039;", 2 );
 
 			$this->ifthd->skin->error( 'login_no_user', 1 );
 		}
@@ -225,8 +225,8 @@ class asession {
 			// Permission
 			if ( ! $mem['g_acp_access'] )
 			{
-				$this->ifthd->log( 'admin', "ACP Login Blocked Access &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
-				$this->ifthd->log( 'security', "ACP Login Blocked Access &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
+				$this->ifthd->log( 'admin', "ACP Доступ на авторизацию заблокирован &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
+				$this->ifthd->log( 'security', "ACP Доступ на авторизацию заблокирован &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
 
 				$this->ifthd->skin->error( 'login_no_admin', 1 );
 			}
@@ -264,7 +264,7 @@ class asession {
 
 			$this->ifthd->set_cookie( 'hdasid', $new_session, time() + ( $this->ifthd->core->cache['config']['acp_session_timeout'] * 60 * 60 ) );
 
-			$this->ifthd->log( 'admin', "ACP Successful Login &#039;". $mem['name'] ."&#039;", 1, $mem['id'] );
+			$this->ifthd->log( 'admin', "ACP Удачная авторизация &#039;". $mem['name'] ."&#039;", 1, $mem['id'] );
 			
 			// Play It Safe
 			$mem['password'] = $mem['pass_salt'] = $mem['login_key'] = "";
@@ -303,8 +303,8 @@ class asession {
 		}
 		else
 		{
-			$this->ifthd->log( 'admin', "ACP Failed Login Attempt &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
-			$this->ifthd->log( 'security', "ACP Failed Login Attempt &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
+			$this->ifthd->log( 'admin', "ACP Ошибка попытки входа &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
+			$this->ifthd->log( 'security', "ACP Ошибка попытки входа &#039;". $mem['name'] ."&#039;", 2, $mem['id'] );
 
 			$this->ifthd->skin->error( 'login_no_pass', 1 );
 		}
