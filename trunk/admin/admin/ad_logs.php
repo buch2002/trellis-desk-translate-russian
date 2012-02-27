@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -29,8 +37,8 @@ class ad_logs {
 
 	function auto_run()
 	{
-		$this->ifthd->skin->set_section( 'Log Center' );		
-		$this->ifthd->skin->set_description( 'View and prune admin, member, error, security and ticket logs.' );
+		$this->ifthd->skin->set_section( 'Журналирование - логи' );		
+		$this->ifthd->skin->set_description( 'Просмотр логов на ошибки и действия, удаление лог-файлов - администратора, пользователей, отчёты безопасности и логи тикетов.' );
 		
 		if ( ! $this->ifthd->member['acp']['admin_logs'] )
 		{
@@ -73,22 +81,22 @@ class ad_logs {
 		if ( $this->ifthd->input['code'] == 'mod' )
 		{
 			$type_id = 1;
-			$logs_name = 'Moderator';
+			$logs_name = 'Модераторов';
 		}
 		elseif ( $this->ifthd->input['code'] == 'admin' )
 		{
 			$type_id = 2;
-			$logs_name = 'Admin';
+			$logs_name = 'Администраторов';
 		}
 		elseif ( $this->ifthd->input['code'] == 'error' )
 		{
 			$type_id = 3;
-			$logs_name = 'Error';
+			$logs_name = 'Ошибок';
 		}
 		elseif ( $this->ifthd->input['code'] == 'security' )
 		{
 			$type_id = 4;
-			$logs_name = 'Security';
+			$logs_name = 'Безопасности';
 		}
 		elseif ( $this->ifthd->input['code'] == 'email' )
 		{
@@ -98,17 +106,17 @@ class ad_logs {
 		elseif ( $this->ifthd->input['code'] == 'member' )
 		{
 			$type_id = 6;
-			$logs_name = 'Member';
+			$logs_name = 'Пользователей';
 		}
 		elseif ( $this->ifthd->input['code'] == 'ticket' )
 		{
 			$type_id = 7;
-			$logs_name = 'Ticket';
+			$logs_name = 'Тикетов';
 		}
 		else
 		{
 			$type_id = 9;
-			$logs_name = 'Other';
+			$logs_name = 'Прочие';
 		}
 
 		#=============================
@@ -146,18 +154,18 @@ class ad_logs {
 		if ( $order == 'DESC' )
 		{
 			$$order_var = "&amp;order=asc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='UP' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_up.gif' alt='Вверх' />";
 		}
 		else
 		{
 			$$order_var = "&amp;order=desc";
-			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='DOWN' />";
+			$$img_var = "&nbsp;<img src='<! IMG_DIR !>/arrow_down.gif' alt='Вниз' />";
 		}
 
-		$link_action = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=action". $order_action ."'>Action". $img_action ."</a>";
-		$link_date = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=date". $order_date ."'>Date". $img_date ."</a>";
-		$link_user = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=mname". $order_mname ."'>User". $img_mname ."</a>";
-		$link_ipadd = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=ipadd". $order_ipadd ."'>IP Address". $img_ipadd ."</a>";
+		$link_action = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=action". $order_action ."'>Действие". $img_action ."</a>";
+		$link_date = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=date". $order_date ."'>Дата". $img_date ."</a>";
+		$link_user = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=mname". $order_mname ."'>Пользователь". $img_mname ."</a>";
+		$link_ipadd = "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs". $link_extra ."&amp;sort=ipadd". $order_ipadd ."'>IP адресс". $img_ipadd ."</a>";
 
 		if ( $this->ifthd->input['sort'] )
 		{
@@ -238,7 +246,7 @@ class ad_logs {
 		else
 		{
 			$log_rows .= "<tr>
-								<td class='option1' colspan='4'>There are no logs to display.</td>
+								<td class='option1' colspan='4'>Нет информации для отображения.</td>
 							</tr>";
 		}
 
@@ -248,21 +256,21 @@ class ad_logs {
 
 		$page_links = $this->ifthd->page_links( '?section=admin&amp;act=logs'. $link_extra, $log_count, 20, $start, 1 );
 
-		$this->output = "<div class='groupbox'><div style='float: right'><a href=\"javascript:Effect.toggle('prunebox','slide',{duration: 0.5});\"><img src='<! IMG_DIR !>/button_mini_prune.gif' alt='Prune' /></a></div>{$logs_name} Logs</div>
+		$this->output = "<div class='groupbox'><div style='float: right'><a href=\"javascript:Effect.toggle('prunebox','slide',{duration: 0.5});\"><img src='<! IMG_DIR !>/button_mini_prune.gif' alt='Удалить' /></a></div>Логи {$logs_name}</div>
 						<div id='prunebox' style='display:none'>
 						<form action='<! HD_URL !>/admin.php?section=admin&amp;act=logs&amp;code=prune&amp;type={$type_id}' method='post'>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<td width='37%' class='option1' style='border-right: 1px solid #FFF;'>
-								<input type='radio' name='ptype' id='d_old' value='1' class='radio' checked='checked' /> <label for='d_old'>Delete logs older than </label><input type='text' name='odays' id='odays' size='2' /><label for='d_old'> days.</label>
+								<input type='radio' name='ptype' id='d_old' value='1' class='radio' checked='checked' /> <label for='d_old'>Удалить логи за последние </label><input type='text' name='odays' id='odays' size='2' /><label for='d_old'> дней.</label>
 							</td>
 							<td width='63%' class='option1'>
-								<input type='radio' name='ptype' id='d_all' value='2' class='radio' /> <label for='d_all'>Delete all logs.</label>
+								<input type='radio' name='ptype' id='d_all' value='2' class='radio' /> <label for='d_all'>Удалить все логи.</label>
 							</td>
 						</tr>
 						<tr>
 							<td colspan='3' class='option2'>
-								<input type='submit' name='prune' id='prune' value='Prune Logs' class='button' />
+								<input type='submit' name='prune' id='prune' value='Удалить логи' class='button' />
 							</td>
 						</tr>
 						</table>
@@ -282,11 +290,11 @@ class ad_logs {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs'>Logs</a>",
-						   $logs_name ." Logs",
+						   "<a href='<! HD_URL !>/admin.php?section=admin&amp;act=logs'>Логи</a>",
+						   $logs_name ." Логи",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'View Logs' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Просмотр логов' ) );
 	}
 
 	#=======================================
@@ -311,19 +319,19 @@ class ad_logs {
 
 		if ( $this->ifthd->input['type'] == 1 )
 		{
-			$log_name = 'Moderator';
+			$log_name = 'Модераторов';
 		}
 		elseif ( $this->ifthd->input['type'] == 2 )
 		{
-			$log_name = 'Admin';
+			$log_name = 'Администраторов';
 		}
 		elseif ( $this->ifthd->input['type'] == 3 )
 		{
-			$log_name = 'Error';
+			$log_name = 'Ошибок';
 		}
 		elseif ( $this->ifthd->input['type'] == 4 )
 		{
-			$log_name = 'Security';
+			$log_name = 'Безопасности';
 		}
 		elseif ( $this->ifthd->input['type'] == 5 )
 		{
@@ -331,15 +339,15 @@ class ad_logs {
 		}
 		elseif ( $this->ifthd->input['type'] == 6 )
 		{
-			$log_name = 'Member';
+			$log_name = 'Пользователей';
 		}
 		elseif ( $this->ifthd->input['type'] == 7 )
 		{
-			$log_name = 'Ticket';
+			$log_name = 'Тикетов';
 		}
 		else
 		{
-			$log_name = 'Other';
+			$log_name = 'Прочие';
 		}
 
 		#=============================
@@ -371,7 +379,7 @@ class ad_logs {
 
 			$this->ifthd->core->db->execute();
 
-			$this->ifthd->log( 'admin', "Pruned ". $log_name ." Logs", 2, $this->ifthd->input['type'] );
+			$this->ifthd->log( 'admin', "Удалить ". $log_name ." Логи", 2, $this->ifthd->input['type'] );
 
 			#=============================
 			# Redirect
@@ -392,7 +400,7 @@ class ad_logs {
 
 			$this->ifthd->core->db->execute();
 
-			$this->ifthd->log( 'admin', "Pruned ". $log_name ." Logs", 2, $this->ifthd->input['type'] );
+			$this->ifthd->log( 'admin', "Удалить ". $log_name ." Логи", 2, $this->ifthd->input['type'] );
 
 			#=============================
 			# Redirect

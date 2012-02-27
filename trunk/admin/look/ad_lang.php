@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -34,8 +42,8 @@ class ad_lang {
 			$this->ifthd->skin->error('no_perm');
 		}
 
-		$this->ifthd->skin->set_section( 'Look &amp; Feel' );
-		$this->ifthd->skin->set_description( 'Manage the presentation of your helpdesk with skins and languages.' );
+		$this->ifthd->skin->set_section( 'Оформление и языки' );
+		$this->ifthd->skin->set_description( 'Управление шкурами и языками вашего HelpDesk.' );
 
 		switch( $this->ifthd->input['code'] )
 	    {
@@ -126,13 +134,13 @@ class ad_lang {
 
 			if ( $l['default'] )
 			{
-				$l['default'] = "<span class='disabled'>Default</span>";
-				$l['delete'] = "<span class='disabled'><img src='<! HD_URL !>/images/default/button_delete_disabled.gif' alt='Delete' /></span>";
+				$l['default'] = "<span class='disabled'>Основной</span>";
+				$l['delete'] = "<span class='disabled'><img src='<! HD_URL !>/images/default/button_delete_disabled.gif' alt='Удалить' /></span>";
 			}
 			else
 			{
-				$l['default'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=default&amp;id={$l['id']}'>Make Default</a>";
-				$l['delete'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=delete&amp;id={$l['id']}' onclick='return sure_delete()'><img src='<! HD_URL !>/images/default/button_delete.gif' alt='Delete' /></a>";
+				$l['default'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=default&amp;id={$l['id']}'>Выбрать основным</a>";
+				$l['delete'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=delete&amp;id={$l['id']}' onclick='return sure_delete()'><img src='<! HD_URL !>/images/default/button_delete.gif' alt='Удалить' /></a>";
 			}
 
 			$lang_rows .= "<tr>
@@ -140,15 +148,15 @@ class ad_lang {
 								<td class='{$row_class}'><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=show&amp;id={$l['id']}'>{$l['name']}</a></td>
 								<td class='{$row_class}' align='center'>{$l['default']}</td>
 								<td class='{$row_class}' align='center'>{$l['users']}</td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doexport&amp;id={$l['id']}'><img src='<! HD_URL !>/images/default/button_export.gif' alt='Export' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=show&amp;id={$l['id']}'>Language</a> | <a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=prop&amp;id={$l['id']}'>Properties</a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doexport&amp;id={$l['id']}'><img src='<! HD_URL !>/images/default/button_export.gif' alt='Экспорт' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=show&amp;id={$l['id']}'>Язык</a> | <a href='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=prop&amp;id={$l['id']}'>Свойства</a></td>
 								<td class='{$row_class}' align='center'>{$l['delete']}</td>
 							</tr>";
 		}
 
 		if ( $instr == 'export' )
 		{
-			$add_txt = "<div class='option1'>To export a language pack, simply click the Export link next to the appropriate language pack.</div>";
+			$add_txt = "<div class='option1'>Чтобы экспортировать языковой пакет, просто нажмите на ссылку Экспорт рядом с соответствующим языковым пакетом.</div>";
 		}
 
 		#=============================
@@ -168,7 +176,7 @@ class ad_lang {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this language pack?') )
+								if ( confirm('Вы действительно хотите удалить этот языковой пакет?') )
 								{
 									return true;
 								}
@@ -180,17 +188,17 @@ class ad_lang {
 
 						</script>
 						{$error}
-						<div class='groupbox'>Language List</div>
+						<div class='groupbox'>Список языков</div>
 						{$add_txt}
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<th width='6%' align='left'>Key</th>
-							<th width='22%' align='left'>Name</th>
-							<th width='15%'>Default</th>
-							<th width='11%'>Members</th>
-							<th width='11%'>Export</th>
-							<th width='24%'>Edit</th>
-							<th width='11%'>Delete</th>
+							<th width='6%' align='left'>Ключ</th>
+							<th width='22%' align='left'>Название</th>
+							<th width='15%'>Выбор основного языка</th>
+							<th width='11%'>Пользователи</th>
+							<th width='11%'>Экспорт</th>
+							<th width='24%'>Редактировать</th>
+							<th width='11%'>Удалить</th>
 						</tr>
 						". $lang_rows ."
 						</table>";
@@ -198,12 +206,12 @@ class ad_lang {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Languages</a>",
-						   "List Languages",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Языки</a>",
+						   "Список языков",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -258,30 +266,30 @@ class ad_lang {
 		}
 
 		$this->output = "{$error}
-						<div class='groupbox'>Edit Properties</div>
+						<div class='groupbox'>Редактировать свойства</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doprop&amp;id={$l['id']}' method='post'>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='20%'><label for='name'>Name</label></td>
+							<td class='option1' width='20%'><label for='name'>Название</label></td>
 							<td class='option1' width='80%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2'><label for='lkey'>Key</label></td>
+							<td class='option2'><label for='lkey'>Ключ</label></td>
 							<td class='option2'><input type='text' name='lkey' id='lkey' value='{$lkey}' size='5' /></td>
 						</tr>
 						</table>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Properties' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Languages</a>",
-						   "Edit Properties",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Языки</a>",
+						   "Редактировать свойства",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -304,22 +312,22 @@ class ad_lang {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->show_prop('Please enter a name.');
+			$this->show_prop('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['lkey'] )
 		{
-			$this->show_prop('Please enter a key.');
+			$this->show_prop('Пожалуйста, введите ключ.');
 		}
 
 		if ( ! $this->key_check( $this->ifthd->input['lkey'] ) )
 		{
-			$this->show_prop('Your key must be alphanumeric, lowercase, and contain no spaces.');
+			$this->show_prop('Ключ должен быть указал латиницей в нижнем регистре и без пробелов, может содержать цифры.');
 		}
 
 		if ( strlen( $this->ifthd->input['lkey'] ) > 3 )
 		{
-			$this->show_prop('Your key must be no more than 3 characters long.');
+			$this->show_prop('Ваш ключ должен быть не более 3 символов.');
 		}
 
 
@@ -334,7 +342,7 @@ class ad_lang {
 
 		if ( $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->show_prop('That key is already in use.  Please choose another.');
+			$this->show_prop('Этот ключ уже используется. Пожалуйста, выберите другой.');
 		}
 
 		$this->ifthd->core->db->construct( array(
@@ -384,14 +392,14 @@ class ad_lang {
 
 		$this->ifthd->rebuild_lang_cache();
 
-		$this->ifthd->log( 'admin', "Language Properites Updated &#039;". $l['name'] ."&#039;" );
+		$this->ifthd->log( 'admin', "Свойства языка обновлены &#039;". $l['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang', 'prop_lang_success' );
-		$this->list_langs( '', 'The language has been successfully updated.' );
+		$this->list_langs( '', 'Язык был успешно обновлен.' );
 	}
 
 	#=======================================
@@ -412,21 +420,21 @@ class ad_lang {
 
 		$lang_drop = $this->ifthd->build_lang_drop();
 
-		$this->output = "<div class='groupbox'>Language Tools</div>
+		$this->output = "<div class='groupbox'>Иструменты для языка</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=dotools' method='post'>
-						<div class='option1'>Switch ALL users to language: <select name='all_lang' id='all_lang'>{$lang_drop}</select> <input type='submit' name='all_users' id='all_users' value='Switch' /></div>
-						<div class='option2'>Users using language <select name='first_lang' id='first_lang'>{$lang_drop}</select> switch to <select name='sec_lang' id='sec_lang'>{$lang_drop}</select> <input type='submit' name='some_users' id='some_users' value='Switch' /></div>
+						<div class='option1'>Установить всем пользователям язык: <select name='all_lang' id='all_lang'>{$lang_drop}</select> <input type='submit' name='all_users' id='all_users' value='Установить' /></div>
+						<div class='option2'>Для пользователей использующих язык <select name='first_lang' id='first_lang'>{$lang_drop}</select> изменить на <select name='sec_lang' id='sec_lang'>{$lang_drop}</select> <input type='submit' name='some_users' id='some_users' value='Установить' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Languages</a>",
-						   "Language Tools",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Языки</a>",
+						   "Языковые инструменты",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -465,14 +473,14 @@ class ad_lang {
 			$this->ifthd->core->db->execute();
 		}
 
-		$this->ifthd->log( 'admin', "Language Tools Ran" );
+		$this->ifthd->log( 'admin', "Языковые инструменты Ran" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang&code=tools', 'switch_lang_success' );
-		$this->list_langs( '', 'The members\' languages have been successfully updated.');
+		$this->list_langs( '', 'Языки пользователей были успешно обновлены.');
 	}
 
 	#=======================================
@@ -549,10 +557,10 @@ class ad_lang {
 							</tr>";
 		}
 
-		$this->output = "<div class='groupbox'>Language Files List</div>
+		$this->output = "<div class='groupbox'>Список языковых файлов</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<th align='left'>File Name (Click to Edit)</th>
+							<th align='left'>Имя файла (Кликните для редактирования)</th>
 						</tr>
 						". $lang_rows ."
 						</table>";
@@ -560,13 +568,13 @@ class ad_lang {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Languages</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Языки</a>",
 						   $l['name'],
-						   "List Languages",
+						   "Список языков",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -641,28 +649,28 @@ class ad_lang {
 
 		unset( $lang );
 
-		$this->output = "<div class='groupbox'>Edit Language</div>
+		$this->output = "<div class='groupbox'>Редактирование языка</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doedit&amp;lkey={$l['lkey']}&amp;file={$this->ifthd->input['file']}' method='post'>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<th width='25%' align='left'>Key</th>
-							<th width='75%' align='left'>Replacement</th>
+							<th width='25%' align='left'>Ключ</th>
+							<th width='75%' align='left'>Укажите перевод</th>
 						</tr>
 						". $lang_rows ."
 						</table>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Language File' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Languages</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Языки</a>",
 						   $l['name'],
-						   "Edit Language",
+						   "Редактировать язык",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -766,14 +774,14 @@ class ad_lang {
 
 		@fclose( $handle );
 
-		$this->ifthd->log( 'admin', "Language File &#039;". $this->ifthd->input['file'] ."&#039; Edited", 1, $l['id'] );
+		$this->ifthd->log( 'admin', "Языковый файл &#039;". $this->ifthd->input['file'] ."&#039; Отредактирован", 1, $l['id'] );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang&code=show&id='. $l['id'], 'edit_lang_success' );
-		$this->list_langs( '', 'The language file has been successfully updated.' );
+		$this->list_langs( '', 'Языковой файл был успешно обновлен.' );
 	}
 
 	#=======================================
@@ -802,15 +810,15 @@ class ad_lang {
 							{
 								if ( ! form.lang_file.value )
 								{
-									alert('Please select a file to upload.');
+									alert('Пожалуйста, выберите файл для загрузки.');
 									form.lang_file.focus();
 									return false;
 								}
 							}
 
 						</script>
-						<div class='groupbox'>Import a Language</div>
-						<div class='subbox'>Please select a valid Trellis Desk XML Language File to import.</div>
+						<div class='groupbox'>Импорт языка</div>
+						<div class='subbox'>Пожалуйста, выберите языковый файл для импорта соответствующий страндарту Trellis Desk XML.</div>
 						<form enctype='multipart/form-data' action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doimport' method='post' onsubmit='return validate_form(this)'>
 						<div class='option1'><input type='file' name='lang_file' id='lang_file' size='40' /></div>
 						<div class='formtail'><input type='submit' name='upload' id='upload' value='Import' class='button' /></div>
