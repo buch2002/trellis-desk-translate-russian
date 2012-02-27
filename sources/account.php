@@ -394,7 +394,7 @@ class account {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'member', "Account Modified &#039;". $this->ifthd->member['name'] ."&#039;" );
+		$this->ifthd->log( 'member', "Аккаунт изменён &#039;". $this->ifthd->member['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
@@ -499,8 +499,8 @@ class account {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'member', "Password Changed &#039;". $this->ifthd->member['name'] ."&#039;" );
-		$this->ifthd->log( 'security', "Password Changed &#039;". $this->ifthd->member['name'] ."&#039;" );
+		$this->ifthd->log( 'member', "Пароль изменен &#039;". $this->ifthd->member['name'] ."&#039;" );
+		$this->ifthd->log( 'security', "Пароль изменен &#039;". $this->ifthd->member['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
@@ -597,8 +597,8 @@ class account {
 
 		$this->ifthd->send_email( $this->ifthd->member['id'], 'change_email_val', $replace, array( 'over_email' => $this->ifthd->input['new_email'] ) );
 
-		$this->ifthd->log( 'member', "Email Address Changed &#039;". $this->ifthd->member['name'] ."&#039;" );
-		$this->ifthd->log( 'security', "Email Address Changed &#039;". $this->ifthd->member['name'] ."&#039;" );
+		$this->ifthd->log( 'member', "Email адресс изменен &#039;". $this->ifthd->member['name'] ."&#039;" );
+		$this->ifthd->log( 'security', "Email адресс изменен &#039;". $this->ifthd->member['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
@@ -634,7 +634,7 @@ class account {
 
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'error', "Validation Key Not Found &#039;". $this->ifthd->input['key'] ."&#039;" );
+			$this->ifthd->log( 'error', "Валидационный ключ не найден &#039;". $this->ifthd->input['key'] ."&#039;" );
 
 			$this->ifthd->skin->error('no_email_val_key');
 		}
@@ -651,7 +651,7 @@ class account {
 
 			$this->ifthd->core->db->execute();
 
-			$this->ifthd->log( 'error', "Validation Key Expired &#039;". $v['id'] ."&#039;", 1, $v['mid'] );
+			$this->ifthd->log( 'error', "Валидационный ключ истёк &#039;". $v['id'] ."&#039;", 1, $v['mid'] );
 
 			$this->ifthd->skin->error('no_email_val_key');
 		}
@@ -669,8 +669,8 @@ class account {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'member', "Account Validated &#039;". $v['mname'] ."&#039;", 1, $v['mid'] );
-		$this->ifthd->log( 'security', "Account Validated &#039;". $v['mname'] ."&#039;", 1, $v['mid'] );
+		$this->ifthd->log( 'member', "Аккаунт утверждён &#039;". $v['mname'] ."&#039;", 1, $v['mid'] );
+		$this->ifthd->log( 'security', "Аккаунт утверждён &#039;". $v['mname'] ."&#039;", 1, $v['mid'] );
 
 		#=============================
 		# Delete Validation

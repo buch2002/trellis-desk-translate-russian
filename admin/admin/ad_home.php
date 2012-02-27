@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -29,8 +37,8 @@ class ad_home {
 
 	function auto_run()
 	{
-		$this->ifthd->skin->set_section( 'Administration Control Panel' );		
-		$this->ifthd->skin->set_description( 'Welcome to Trellis Desk. Manage your settings, tickets, content, and appearance using your Administration Control Panel.' );
+		$this->ifthd->skin->set_section( 'Контрольная Панель Администрирования' );		
+		$this->ifthd->skin->set_description( 'Добро пожаловать в Trellis Desk. Управляйте вашими настройками, тикетами, содержанием и внешним видом вашей Панели Администрирования.' );
 		
 		switch( $this->ifthd->input['code'] )
     	{
@@ -57,11 +65,11 @@ class ad_home {
 		
 		if ( file_exists( HD_PATH .'install/install.lock' ) )
 		{
-			$alert = 'Your <i>install</i> directory still exists.  While the installer is locked, we recommend deleting or renaming the <i>install</i> directory for added security.';
+			$alert = 'Директория <i>install</i> всё ещё существует. В то время как инсталятор заблокирован, мы рекомендуем удалить или переименовать директорию <i>install</i> для дополнительной безопасности.';
 		}
 		elseif ( is_dir( HD_PATH .'install' ) )
 		{
-			$error = 'Your <i>install</i> directory still exists.  We strongly recommend deleting or renaming this directory for added security.';
+			$error = 'Директория <i>install</i> всё ещё существует. Мы настоятельно рекомендуем удалить или переименовать директорию <i>install</i> для дополнительной безопасности.';
 		}
 		
 		#=============================
@@ -74,7 +82,7 @@ class ad_home {
 		}
 		else
 		{
-			$notes_msg = "<p class='bldesc'>Notes saved.</p>";
+			$notes_msg = "<p class='bldesc'>Примечания сохранены.</p>";
 		}
 
 		#=============================
@@ -150,7 +158,7 @@ class ad_home {
 		else
 		{
 			$ticket_rows .= "<tr>
-								<td class='option1' align='center'>There are no tickets awaiting action.</td>
+								<td class='option1' align='center'>Нет тикетов ожидающих ответа.</td>
 							</tr>";
 		}
 
@@ -261,8 +269,8 @@ class ad_home {
 						<tr>
 							<td width='49%' valign='top'>
 							
-								<!-- Admin Notepad box -->
-								<div class='groupbox'>Administrator Notepad</div>
+								<!-- Блок блокнота админа -->
+								<div class='groupbox'>Администраторский блокнот</div>
 								<form action='<! HD_URL !>/admin.php?section=admin&amp;code=notes&amp;do=update' method='post'>
 								<table width='100%' cellpadding='0' cellspacing='0'>
 								<tr>
@@ -272,7 +280,7 @@ class ad_home {
 								</tr>
 								<tr>
 									<td class='option2' align='center'>								
-										<input type='submit' name='submit' id='save' value='Save Notepad' style='cursor: pointer;' />
+										<input type='submit' name='submit' id='save' value='Сохранить' style='cursor: pointer;' />
 									</td>
 								</tr>
 								</table>
@@ -285,28 +293,28 @@ class ad_home {
 							
 							<td width='49%' valign='top'>
 								
-								<!-- System Status box -->
-								<div class='groupbox'>System Status</div>
+								<!-- Блок Состояние системы -->
+								<div class='groupbox'>Состояние системы</div>
 								<table width='100%' cellpadding='0' cellspacing='0'>
 								<tr>
 									<td class='option1' colspan='2'>
 									
 									<div style='padding: 4px; border: 1px solid #9F9F9F; background: #FFF; text-align: center;'>
-									<a href='http://www.accord5.com/trellis'><img src='{$version_img_url}' alt='Update Check' /></a>
+									<a href='http://www.accord5.com/trellis'><img src='{$version_img_url}' alt='Проверка обновлений' /></a>
 									</div>
 									
 									</td>
 								</tr>
 								<tr>
-									<td width='40%' class='option2'>Product Version</td>
+									<td width='40%' class='option2'>Версия продукта</td>
 									<td width='60%' class='option2' style='font-weight: normal;'>". substr( $this->ifthd->vername, 1 ) ." ({$this->ifthd->vernum})</td>
 								</tr>
 								<tr>
-									<td width='40%' class='option1'>PHP Version</td>
+									<td width='40%' class='option1'>PHP версия</td>
 									<td width='60%' class='option1' style='font-weight: normal;'>". phpversion() ."</td>
 								</tr>
 								<tr>
-									<td width='40%' class='option2'>MySQL Version</td>
+									<td width='40%' class='option2'>MySQL версия</td>
 									<td width='60%' class='option2' style='font-weight: normal;'>". mysql_get_server_info() ."</td>
 								</tr>
 								</table>
@@ -322,8 +330,8 @@ class ad_home {
 						<tr>
 							<td colspan='3'>
 							
-								<!-- Tickets Awaiting Action box -->
-								<div class='groupbox'>Tickets Awaiting Action</div>
+								<!-- Блок ожидающих тикетов -->
+								<div class='groupbox'>Тикеты ожидающие ответа</div>
 								<table width='100%' cellpadding='0' cellspacing='0'>
 								". $ticket_rows ."
 								</table>
@@ -339,8 +347,8 @@ class ad_home {
 						<tr>
 							<td colspan='3'>
 							
-								<!-- Last 5 Admin Actions box -->
-								<div class='groupbox'>Last 5 Admin Actions</div>
+								<!-- Блок Последних 5 действий администратора -->
+								<div class='groupbox'>Последние 5 действий администратора</div>
 								<table width='100%' cellpadding='0' cellspacing='0'>
 								". $log_rows ."
 								</table>
@@ -351,7 +359,7 @@ class ad_home {
 
 		$this->ifthd->skin->add_output( $acp_content );
 
-		$this->ifthd->skin->do_output( array( 'title' => 'System Overview' ) );
+		$this->ifthd->skin->do_output( array( 'title' => 'Обзор системы' ) );
 	}
 
 	#=======================================
