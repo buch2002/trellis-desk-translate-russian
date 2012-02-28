@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -315,10 +323,10 @@ class ad_announce {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображается начало ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." самой новости
+											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображаются первые ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." символов самой новости.
 										</div>
 										</div>
 									</div>
@@ -412,7 +420,7 @@ class ad_announce {
 							{
 								if ( ! form.title.value )
 								{
-									alert('Please enter a title.');
+									alert('Пожалуйста, введите название.');
 									form.title.focus();
 									return false;
 								}
@@ -466,10 +474,10 @@ class ad_announce {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображается начало ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." самой новости.
+											Это маленький анонс на портале. Отображается всегда перед самой новостью. Если не указать анонс, то отображаются первые ". $this->ifthd->core->cache['config']['news_excerpt_trim'] ." символов самой новости.
 										</div>
 										</div>
 									</div>

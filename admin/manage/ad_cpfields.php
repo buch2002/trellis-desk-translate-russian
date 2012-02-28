@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -261,7 +269,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
@@ -288,7 +296,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
@@ -314,7 +322,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											Это поле должно быть заполненым при обновлении информации о профиле. Однако, это поле будет отображаться только на странице регистрации, если выбрать в опциях &#8220;Показать при регистрации&#8221; значение &#8220;Да&#8221; ниже.
@@ -337,7 +345,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле будет показано на странице регистрации, независимо от группы разрешений ниже.
@@ -360,7 +368,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info5' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле и его значение будет отображаться на странице просмотра тикета.
@@ -383,7 +391,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info6' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле будет только видимым и редактируемым сотрудникам, которые имеют доступ к Административной Контрольной Панели. Это полезно для хранения информации о клиентах, только сотрудники должны их видеть.
@@ -408,7 +416,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info7' style='display: none;'>
 										<div>
 											Выберите группы, в которых это поле будет доступным. Вы можете выбрать более одной группы.
@@ -551,7 +559,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
@@ -578,7 +586,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
@@ -604,7 +612,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											Это поле должно быть заполненым при обновлении информации о профиле. Однако, это поле будет отображаться только на странице регистрации, если выбрать в опциях &#8220;Показать при регистрации&#8221; значение &#8220;Да&#8221; ниже.
@@ -627,7 +635,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле будет показано на странице регистрации, независимо от группы разрешений ниже.
@@ -650,7 +658,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info5' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле и его значение будет отображаться на странице просмотра тикета.
@@ -673,7 +681,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info6' style='display: none;'>
 										<div>
 											Если установлено значение Да, то это поле будет только видимым и редактируемым сотрудникам, которые имеют доступ к Административной Контрольной Панели. Это полезно для хранения информации о клиентах, только сотрудники должны их видеть.
@@ -698,7 +706,7 @@ class ad_cpfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info7' style='display: none;'>
 										<div>
 											Выберите группы, в которых это поле будет доступным. Вы можете выбрать более одной группы.

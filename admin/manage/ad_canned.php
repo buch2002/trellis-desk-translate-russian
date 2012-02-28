@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -34,8 +42,8 @@ class ad_canned {
 			$this->ifthd->skin->error('no_perm');
 		}
 		
-		$this->ifthd->skin->set_section( 'Ticket Control' );		
-		$this->ifthd->skin->set_description( 'Manage your tickets,  departments, custom department fields and canned replies.' );
+		$this->ifthd->skin->set_section( 'Управление тикетами' );		
+		$this->ifthd->skin->set_description( 'Управление тикетами, отделами, настраиваемые поля отдела и шаблоны ответов.' );
 
 		switch( $this->ifthd->input['code'] )
 	    {
@@ -109,15 +117,15 @@ class ad_canned {
 									<td class='{$row_class}'>{$c['id']}</td>
 									<td class='{$row_class}'>{$c['name']}</td>
 									<td class='{$row_class}' style='font-weight: normal'>{$c['description']}</td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=edit&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=dodel&amp;id={$c['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=edit&amp;id={$c['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=dodel&amp;id={$c['id']}' onclick='return sure_delete()'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 								</tr>";
 			}
 		}
 		else
 		{
 			$canned_rows .= "<tr>
-								<td class='option1' colspan='5'>There are no canned replies to display.</td>
+								<td class='option1' colspan='5'>Нет заготовленых шаблонов ответа для отображения.</td>
 							</tr>";
 		}
 
@@ -138,7 +146,7 @@ class ad_canned {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this canned reply?') )
+								if ( confirm('Вы действительно хотите удалить этот шаблон ответа?') )
 								{
 									return true;
 								}
@@ -150,28 +158,28 @@ class ad_canned {
 
 						</script>
 						{$error}
-						<div class='groupbox'>Canned Replies List</div>
+						<div class='groupbox'>Список готовых ответов</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='5%' align='left'>ID</th>
-							<th width='25%' align='left'>Name</th>
-							<th width='52%' align='left'>Description</th>
-							<th width='7%'>Edit</th>
-							<th width='11%'>Delete</th>
+							<th width='25%' align='left'>Название</th>
+							<th width='52%' align='left'>Описание</th>
+							<th width='7%'>Редактировать</th>
+							<th width='11%'>Удалить</th>
 						</tr>
 						". $canned_rows ."
 						</table>
-						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=add' class='fake_button'>Add A New Canned Reply</a></div></div>";
+						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=add' class='fake_button'>Добавить новый ответ</a></div></div>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Canned Replies</a>",
-						   "List Canned Rplies",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Готовые ответы</a>",
+						   "Список готовых ответов",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Canned Replies' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление готовыми ответами' ) );
 	}
 
 	#=======================================
@@ -205,14 +213,14 @@ class ad_canned {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -245,32 +253,32 @@ class ad_canned {
 
 		$this->output .= "{$error}
 							<form action='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
-							<div class='groupbox'>Add A New Canned Reply</div>
+							<div class='groupbox'>Добавление нового шаблонного ответа</div>
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='17%'><label for='name'>Name</label></td>
+								<td class='option1' width='17%'><label for='name'>Название</label></td>
 								<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$this->ifthd->input['name']}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2' valign='top'><label for='description'>Description</label></td>
+								<td class='option2' valign='top'><label for='description'>Описание</label></td>
 								<td class='option2'><textarea name='description' id='description' cols='50' rows='2'>{$this->ifthd->input['description']}</textarea></td>
 							</tr>
 							<tr>
 								<td class='option1' colspan='2'><textarea name='message' id='message' rows='6' cols='120' style='width: 98%; height: 200px;'>{$this->ifthd->input['message']}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='add' value='Add Canned Reply' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='add' value='Принять' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Canned Replies</a>",
-						   "Add Canned Reply",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Шаблоны ответов</a>",
+						   "Добавление шаблонного ответа",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Canned Replies' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шаблонными ответами' ) );
 	}
 
 	#=======================================
@@ -336,14 +344,14 @@ class ad_canned {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -376,32 +384,32 @@ class ad_canned {
 
 		$this->output .= "{$error}
 							<form action='<! HD_URL !>/admin.php?section=manage&amp;act=canned&amp;code=doedit&amp;id={$c['id']}' method='post' onsubmit='return validate_form(this)'>
-							<div class='groupbox'>Editing Canned Reply: {$c['name']}</div>
+							<div class='groupbox'>Редактирование шаблонного ответа: {$c['name']}</div>
 							<table width='100%' cellpadding='0' cellspacing='0'>
 							<tr>
-								<td class='option1' width='17%'><label for='name'>Name</label></td>
+								<td class='option1' width='17%'><label for='name'>Название</label></td>
 								<td class='option1' width='83%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 							</tr>
 							<tr>
-								<td class='option2' valign='top'><label for='description'>Description</label></td>
+								<td class='option2' valign='top'><label for='description'>Описание</label></td>
 								<td class='option2'><textarea name='description' id='description' cols='50' rows='2'>{$description}</textarea></td>
 							</tr>
 							<tr>
 								<td class='option1' colspan='2'><textarea name='message' id='message' rows='6' cols='120' style='width: 98%; height: 200px;'>{$message}</textarea></td>
 							</tr>
 							</table>
-							<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Canned Reply' class='button' /></div>
+							<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять' class='button' /></div>
 							</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Canned Replies</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=canned'>Шаблоны ответов</a>",
 						   "Edit Canned Reply",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Canned Replies' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шаблонными ответами' ) );
 	}
 
 	#=======================================
@@ -461,19 +469,19 @@ class ad_canned {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->add_canned('Please enter a name.');
+			$this->add_canned('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->add_canned('Please enter a description.');
+			$this->add_canned('Пожалуйста, введите описание.');
 		}
 		
 		$this->ifthd->input['message'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['message'] );
 
 		if ( ! $this->ifthd->input['message'] )
 		{
-			$this->add_canned('Please enter a message.');
+			$this->add_canned('Пожалуйста, введите сообшение.');
 		}
 
 		#=============================
@@ -495,7 +503,7 @@ class ad_canned {
 
 		$canned_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'admin', "Canned Reply Added &#039;". $this->ifthd->input['name'] ."&#039;", 1, $canned_id );
+		$this->ifthd->log( 'admin', "Шаблонный ответ добавлен &#039;". $this->ifthd->input['name'] ."&#039;", 1, $canned_id );
 
 		#=============================
 		# Rebuild Cache
@@ -508,7 +516,7 @@ class ad_canned {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=canned&code=list', 'add_canned_success' );
-		$this->list_canned( '', 'The canned reply has been successfully added.' );
+		$this->list_canned( '', 'Шаблонный ответ успешно добавлен.' );
 	}
 
 	#=======================================
@@ -547,19 +555,19 @@ class ad_canned {
 
 		if ( ! $this->ifthd->input['name'] )
 		{
-			$this->edit_canned('Please enter a name.');
+			$this->edit_canned('Пожалуйста, введите название.');
 		}
 
 		if ( ! $this->ifthd->input['description'] )
 		{
-			$this->edit_canned('Please enter a description.');
+			$this->edit_canned('Пожалуйста, введите описание.');
 		}
 		
 		$this->ifthd->input['message'] = $this->ifthd->remove_extra_lbs( $this->ifthd->input['message'] );
 
 		if ( ! $this->ifthd->input['message'] )
 		{
-			$this->edit_canned('Please enter a message.}');
+			$this->edit_canned('Пожалуйста, введите сообщение.}');
 		}
 
 		#=============================
@@ -580,7 +588,7 @@ class ad_canned {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Canned Reply Updated &#039;". $this->ifthd->input['name'] ."&#039;", 1, $c['id'] );
+		$this->ifthd->log( 'admin', "Шаблонный ответ обновлен &#039;". $this->ifthd->input['name'] ."&#039;", 1, $c['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -593,7 +601,7 @@ class ad_canned {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=canned&code=list', 'edit_canned_success' );
-		$this->list_canned( '', 'The canned reply has been successfully updated.' );
+		$this->list_canned( '', 'Шаблонный ответ успешно обновлён.' );
 	}
 
 	#=======================================
@@ -642,7 +650,7 @@ class ad_canned {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Canned Reply Deleted &#039;". $c['name'] ."&#039;", 2, $c['id'] );
+		$this->ifthd->log( 'admin', "Шаблонный ответ удалён &#039;". $c['name'] ."&#039;", 2, $c['id'] );
 
 		#=============================
 		# Rebuild Cache
@@ -655,7 +663,7 @@ class ad_canned {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=canned&code=list', 'delete_canned_success' );
-		$this->list_canned( 'The canned reply has been successfully deleted.' );
+		$this->list_canned( 'Шаблонный ответ успешно удалён.' );
 	}
 
 }

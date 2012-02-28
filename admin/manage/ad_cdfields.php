@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -273,7 +281,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
@@ -300,7 +308,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
@@ -326,7 +334,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											Если необходимо чтоб это поле было перед принятием тикета.
@@ -351,7 +359,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Выберите отделы, в которых это поле будет появляться при отправке тикета. Вы можете выбрать более одного отдела.
@@ -487,7 +495,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Этот ключ, уникальный идентификатор для этого дополнительного поля. Он не должен содержать пробелов, но может содержать только цифры и буквы латинского алфавита в нижнем регистре.
@@ -514,7 +522,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Пример выпадающего списка: <select name='example'><option value='yes'>Да</option><option value='no'>Нет</option><option value='maybe'>Возможно</option></select><br /><br />
@@ -540,7 +548,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											Если необходимо чтоб это поле было перед принятием тикета.
@@ -565,7 +573,7 @@ class ad_cdfields {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Выберите отделы, в которых это поле будет появляться при отправке тикета. Вы можете выбрать более одного отдела.
@@ -844,7 +852,7 @@ class ad_cdfields {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=manage&act=cdfields&code=list', 'delete_dfield_success' );
-		$this->list_fields( 'Настраиваемое поле отдела успешно удалено.' );
+		$this->list_fields( 'Настраиваемое поле Отдела успешно удалено.' );
 	}
 
 	#=======================================
