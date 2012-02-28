@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -34,8 +42,8 @@ class ad_depart {
 			$this->ifthd->skin->error('no_perm');
 		}
 		
-		$this->ifthd->skin->set_section( 'Ticket Control' );		
-		$this->ifthd->skin->set_description( 'Manage your tickets,  departments, custom department fields and canned replies.' );
+		$this->ifthd->skin->set_section( 'Управление тикетами' );		
+		$this->ifthd->skin->set_description( 'Управление тикетами, отделами, настраиваемые поля отдела и шаблоны ответов.' );
 
 		switch( $this->ifthd->input['code'] )
     	{
@@ -115,8 +123,8 @@ class ad_depart {
 									<td class='{$row_class}'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=tickets&amp;code=list&amp;depart={$d['id']}'>{$d['name']}</a></td>
 									<td class='{$row_class}' style='font-weight: normal'>{$d['description']}</td>
 									<td class='{$row_class}' align='center'>{$d['tickets']}</td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=edit&amp;id={$d['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Edit' /></a></td>
-									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=delete&amp;id={$d['id']}'><img src='<! IMG_DIR !>/button_delete.gif' alt='Delete' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=edit&amp;id={$d['id']}'><img src='<! IMG_DIR !>/button_edit.gif' alt='Редактировать' /></a></td>
+									<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=delete&amp;id={$d['id']}'><img src='<! IMG_DIR !>/button_delete.gif' alt='Удалить' /></a></td>
 								</tr>";
 			}
 		}
@@ -135,29 +143,29 @@ class ad_depart {
 		}
 
 		$this->output = "{$error}
-						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=reorder' title='Reorder departments'><img src='<! IMG_DIR !>/button_mini_reorder.gif' alt='Reorder' /></a></div>Department List</div>
+						<div class='groupbox'><div style='float:right'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=reorder' title='Упорядочивание отделов'><img src='<! IMG_DIR !>/button_mini_reorder.gif' alt='Reorder' /></a></div>Список отделов</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
 							<th width='4%' align='left'>ID</th>
-							<th width='22%' align='left'>Name</th>
-							<th width='54%' align='left'>Description</th>
-							<th width='8%'>Tickets</th>
-							<th width='5%'>Edit</th>
-							<th width='7%'>Delete</th>
+							<th width='22%' align='left'>Название</th>
+							<th width='54%' align='left'>Описание</th>
+							<th width='8%'>Тикеты</th>
+							<th width='5%'>Редактировать</th>
+							<th width='7%'>Удалить</th>
 						</tr>
 						". $depart_rows ."
 						</table>
-						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add' class='fake_button'>Add A New Department</a></div></div>";
+						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=add' class='fake_button'>Добавить новый отдел</a></div></div>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=manage'>Management</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart'>Departments</a>",
-						   "List Departments",
+						   "<a href='<! HD_URL !>/admin.php?section=manage'>Управление</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=manage&amp;act=depart'>Отделы</a>",
+						   "Список отделов",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Departments' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление отделами' ) );
 	}
 
 	#=======================================
@@ -196,14 +204,14 @@ class ad_depart {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -213,20 +221,20 @@ class ad_depart {
 
 						<form action='<! HD_URL !>/admin.php?section=manage&amp;act=depart&amp;code=doadd' method='post' onsubmit='return validate_form(this)'>
 						{$error}
-						<div class='groupbox'>Adding Department</div>
+						<div class='groupbox'>Добавление отдела</div>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='25%'><label for='name'>Name</label></td>
+							<td class='option1' width='25%'><label for='name'>Название</label></td>
 							<td class='option1' width='75%'><input type='text' name='name' id='name' value='{$this->ifthd->input['name']}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='description'>Description</label></td>
+							<td class='option2' valign='top'><label for='description'>Описание</label></td>
 							<td class='option2'><textarea name='description' id='description' cols='50' rows='2'>{$this->ifthd->input['description']}</textarea></td>
 						</tr>
 						<tr>
-							<td class='option1'>Auto Assign</td>
+							<td class='option1'>Автоматически назначен</td>
 							<td class='option1' style='font-weight: normal'>
-								<select name='auto_assign' id='auto_assign'><option value='0'>No one</option>". $this->ifthd->build_staff_drop( $this->ifthd->input['auto_assign'] ) ."</select>
+								<select name='auto_assign' id='auto_assign'><option value='0'>Никто</option>". $this->ifthd->build_staff_drop( $this->ifthd->input['auto_assign'] ) ."</select>
 							</td>
 						</tr>";
 		
@@ -235,10 +243,10 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info10','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info10','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info10' style='display: none;'>
 										<div>
-											Tickets submitted to this department will automatically be assigned to the above user.
+											Тикеты отправленные в этот отдел будут закрепляться за выбранным пользователем как за ответственным лицом.
 										</div>
 										</div>
 									</div>
@@ -247,7 +255,7 @@ class ad_depart {
 		}
 
 		$this->output .= "<tr>
-							<td class='option1'>Allow Escalation</td>
+							<td class='option1'>Разрешить гибкое управлени</td>
 							<td class='option1' style='font-weight: normal'>
 								". $this->ifthd->skin->yes_no_radio( 'can_escalate', $this->ifthd->input['can_escalate'] ) ."
 							</td>
@@ -258,10 +266,10 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
-											Escalation places the ticket in a higher priority status and can also be moved to another department (see more options below).
+											Данная функция ставит тикет в статус более высокого приоритета, а также имеет возможность переместить его в другой отдел (подробнее см. ниже).
 										</div>
 										</div>
 									</div>
@@ -281,7 +289,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											When a ticket is escalated, you can also place it in another department, regardless of the department's group permissions.  Select a department to escalate ticket to, or select None to leave the ticket in its current department.
@@ -302,7 +310,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											This is the amount of time that must have passed since ticket submission before a ticket can be escalated.
@@ -323,7 +331,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Tickets can be automatically closed when in the Awaiting Client Action status.  Enter the amount of hours that must pass before a ticket is automatically closed.  Leave blank or enter 0 to disable.
@@ -346,7 +354,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info5' style='display: none;'>
 										<div>
 											If set to yes, tickets can be submitted and replied to by sending an email to the specified email address below.  This requires additional setup with email forwarders.
@@ -367,7 +375,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info6' style='display: none;'>
 										<div>
 											This is the email address that tickets and replies will be sent to for email piping.
@@ -412,7 +420,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info7' style='display: none;'>
 										<div>
 											If set to yes, guests (users who's email address is not registered) will be allowed to create tickets via email piping.  Guests must also have permission to this department (see below).
@@ -447,7 +455,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info8','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info8','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info8' style='display: none;'>
 										<div>
 											If set to yes, a reason must be entered for the closing of each ticket.  The close reason will be displayed on the view ticket page.
@@ -478,7 +486,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info9','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info9','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info9' style='display: none;'>
 										<div>
 											Select the groups that has permission to create tickets in this department.  This only applies for ticket creation.  If a ticket is moved to a department in which the ticket owner does not have permission to, they will still be able to access the ticket.
@@ -623,14 +631,14 @@ class ad_depart {
 						{
 							if ( ! form.name.value )
 							{
-								alert('Please enter a name.');
+								alert('Пожалуйста, введите название.');
 								form.name.focus();
 								return false;
 							}
 
 							if ( ! form.description.value )
 							{
-								alert('Please enter a description.');
+								alert('Пожалуйста, введите описание.');
 								form.description.focus();
 								return false;
 							}
@@ -662,7 +670,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info10','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info10','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info10' style='display: none;'>
 										<div>
 											Tickets submitted to this department will automatically be assigned to the above user.
@@ -685,7 +693,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Escalation places the ticket in a higher priority status and can also be moved to another department (see more options below).
@@ -708,7 +716,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											When a ticket is escalated, you can also place it in another department, regardless of the department's group permissions.  Select a department to escalate ticket to, or select None to leave the ticket in its current department.
@@ -729,7 +737,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info3','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info3' style='display: none;'>
 										<div>
 											This is the amount of time that must have passed since ticket submission before a ticket can be escalated.
@@ -750,7 +758,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info4','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info4' style='display: none;'>
 										<div>
 											Tickets can be automatically closed when in the Awaiting Client Action status.  Enter the amount of hours that must pass before a ticket is automatically closed.  Leave blank or enter 0 to disable.
@@ -773,7 +781,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info5','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info5' style='display: none;'>
 										<div>
 											If set to yes, tickets can be submitted and replied to by sending an email to the specified email address below.  This requires additional setup with email forwarders.
@@ -794,7 +802,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info6','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info6' style='display: none;'>
 										<div>
 											This is the email address that tickets and replies will be sent to for email piping.
@@ -839,7 +847,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info7','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info7' style='display: none;'>
 										<div>
 											If set to yes, guests (users who's email address is not registered) will be allowed to create tickets via email piping.  Guests must also have permission to this department (see below).
@@ -874,7 +882,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info8','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info8','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info8' style='display: none;'>
 										<div>
 											If set to yes, a reason must be entered for the closing of each ticket.  The close reason will be displayed on the view ticket page.
@@ -905,7 +913,7 @@ class ad_depart {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info9','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info9','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info9' style='display: none;'>
 										<div>
 											Select the groups that has permission to create tickets in this department.  This only applies for ticket creation.  If a ticket is moved to a department in which the ticket owner does not have permission to, they will still be able to access the ticket.

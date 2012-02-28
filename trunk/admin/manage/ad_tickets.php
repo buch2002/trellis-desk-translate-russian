@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -34,8 +42,8 @@ class ad_tickets {
 			$this->ifthd->skin->error('no_perm');
 		}
 
-		$this->ifthd->skin->set_section( 'Ticket Control' );
-		$this->ifthd->skin->set_description( 'Manage your tickets,  departments, custom department fields and canned replies.' );
+		$this->ifthd->skin->set_section( 'Управление тикетами' );
+		$this->ifthd->skin->set_description( 'Управление тикетами, отделами, настраиваемые поля отдела и шаблоны ответов.' );
 
 		if ( $this->ifthd->input['act'] == 'reply' )
 		{

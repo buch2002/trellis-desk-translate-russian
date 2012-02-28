@@ -420,7 +420,7 @@ class ad_lang {
 
 		$lang_drop = $this->ifthd->build_lang_drop();
 
-		$this->output = "<div class='groupbox'>Иструменты для языка</div>
+		$this->output = "<div class='groupbox'>Инструменты для языка</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=dotools' method='post'>
 						<div class='option1'>Установить всем пользователям язык: <select name='all_lang' id='all_lang'>{$lang_drop}</select> <input type='submit' name='all_users' id='all_users' value='Установить' /></div>
 						<div class='option2'>Для пользователей использующих язык <select name='first_lang' id='first_lang'>{$lang_drop}</select> изменить на <select name='sec_lang' id='sec_lang'>{$lang_drop}</select> <input type='submit' name='some_users' id='some_users' value='Установить' /></div>
@@ -817,22 +817,22 @@ class ad_lang {
 							}
 
 						</script>
-						<div class='groupbox'>Импорт языка</div>
-						<div class='subbox'>Пожалуйста, выберите языковый файл для импорта соответствующий страндарту Trellis Desk XML.</div>
+						<div class='groupbox'>Импортировать язык</div>
+						<div class='subbox'>Пожалуйста, выберите языковый файл для импорта, соответствующий страндарту Trellis Desk XML.</div>
 						<form enctype='multipart/form-data' action='<! HD_URL !>/admin.php?section=look&amp;act=lang&amp;code=doimport' method='post' onsubmit='return validate_form(this)'>
 						<div class='option1'><input type='file' name='lang_file' id='lang_file' size='40' /></div>
-						<div class='formtail'><input type='submit' name='upload' id='upload' value='Import' class='button' /></div>
+						<div class='formtail'><input type='submit' name='upload' id='upload' value='Импортировать' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Languages</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=lang'>Языки</a>",
 						   "Import Language",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Languages' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление языками' ) );
 	}
 
 	#=======================================
@@ -983,7 +983,7 @@ class ad_lang {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Language Pack &#039;". $this->ifthd->xml_lang_name ."&#039; Imported" );
+		$this->ifthd->log( 'admin', "Языковый пакет &#039;". $this->ifthd->xml_lang_name ."&#039; Импортирован" );
 
 		$this->ifthd->rebuild_lang_cache();
 
@@ -992,7 +992,7 @@ class ad_lang {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang', 'import_lang_success' );
-		$this->list_langs( '', 'The language has been successfully imported.' );
+		$this->list_langs( '', 'Языковый пакет, успешно импортирован.' );
 	}
 
 	#=======================================
@@ -1067,14 +1067,14 @@ class ad_lang {
 
 		$this->ifthd->rebuild_lang_cache();
 
-		$this->ifthd->log( 'admin', "Language Pack &#039;". $s['name'] ."&#039; Set as Default" );
+		$this->ifthd->log( 'admin', "Языковый пакет &#039;". $s['name'] ."&#039; Установлен основным" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang', 'default_lang_success' );
-		$this->list_langs( '', 'The language has been successfully set as default.' );
+		$this->list_langs( '', 'Языковый пакет, успешно установлен как основной.' );
 	}
 
 	#=======================================
@@ -1153,7 +1153,7 @@ class ad_lang {
 			$file_data .= "\t</lang_file>\n";
 		}
 
-		$this->ifthd->log( 'admin', "Language Pack &#039;". $l['name'] ."&#039; Exported" );
+		$this->ifthd->log( 'admin', "Языковый пакет &#039;". $l['name'] ."&#039; Экспортирован" );
 
 		$file_data .= "</language_pack>";
 
@@ -1230,7 +1230,7 @@ class ad_lang {
 
 		$this->ifthd->core->db->execute();
 
-		$this->ifthd->log( 'admin', "Language Pack &#039;". $l['name'] ."&#039; Deleted", 2, $l['id'] );
+		$this->ifthd->log( 'admin', "Языковый пакет &#039;". $l['name'] ."&#039; Удалён", 2, $l['id'] );
 
 		$this->ifthd->rebuild_lang_cache();
 
@@ -1239,7 +1239,7 @@ class ad_lang {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=lang', 'delete_lang_success' );
-		$this->list_langs( 'The language has been successfully deleted.' );
+		$this->list_langs( 'Языковый пакет, успешно удален.' );
 	}
 
 	#=======================================

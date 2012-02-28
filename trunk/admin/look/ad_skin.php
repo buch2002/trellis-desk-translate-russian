@@ -42,8 +42,8 @@ class ad_skin {
 			$this->ifthd->skin->error('no_perm');
 		}
 		
-		$this->ifthd->skin->set_section( 'Look &amp; Feel' );		
-		$this->ifthd->skin->set_description( 'Manage the presentation of your helpdesk with skins and languages.' );
+		$this->ifthd->skin->set_section( 'Оформление и языки' );		
+		$this->ifthd->skin->set_description( 'Управление шкурами и языками вашего HelpDesk.' );
 
 		switch( $this->ifthd->input['code'] )
 	    {
@@ -134,13 +134,13 @@ class ad_skin {
 		{
 			if ( $s['default'] )
 			{
-				$s['default'] = "<span class='disabled' style='font-weight: normal'>Is Default</span>";
-				$s['delete'] = "<span class='disabled'><img src='<! HD_URL !>/images/default/button_delete_disabled.gif' alt='Delete' /></span>";
+				$s['default'] = "<span class='disabled' style='font-weight: normal'>Основной</span>";
+				$s['delete'] = "<span class='disabled'><img src='<! HD_URL !>/images/default/button_delete_disabled.gif' alt='Удалить' /></span>";
 			}
 			else
 			{
-				$s['default'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=default&amp;id={$s['id']}'>Make Default</a>";
-				$s['delete'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=delete&amp;id={$s['id']}' onclick='return sure_delete()'><img src='<! HD_URL !>/images/default/button_delete.gif' alt='Delete' /></a>";
+				$s['default'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=default&amp;id={$s['id']}'>Выбрать основным</a>";
+				$s['delete'] = "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=delete&amp;id={$s['id']}' onclick='return sure_delete()'><img src='<! HD_URL !>/images/default/button_delete.gif' alt='Удалить' /></a>";
 			}
 			
 			$row_count ++;
@@ -150,18 +150,18 @@ class ad_skin {
 			$skin_rows .= "<tr>
 								<td class='{$row_class}'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=prop&amp;id={$s['id']}'>{$s['name']}</a></td>
 								<td class='{$row_class}' align='center'>{$s['default']}</td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=css&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Modify CSS' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=wrapper&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Modify Wrapper' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=templates&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Modify Templates' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=doexport&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/button_export.gif' alt='Export' /></a></td>
-								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=prop&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/button_edit.gif' alt='Edit' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=css&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Редактировать CSS' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=wrapper&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Редактировать структуру сайта (Wrapper)' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=templates&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/page_white_code_red.png' alt='Редактировать шаблон' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=doexport&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/button_export.gif' alt='Экспорт' /></a></td>
+								<td class='{$row_class}' align='center'><a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=prop&amp;id={$s['id']}'><img src='<! HD_URL !>/images/default/button_edit.gif' alt='Редактировать' /></a></td>
 								<td class='{$row_class}' align='center'>{$s['delete']}</td>
 							</tr>";
 		}
 
 		if ( $instr == 'export' )
 		{
-			$add_txt = "<div class='option1'>To export a skin pack, simply click the Export link next to the appropriate skin pack.</div>";
+			$add_txt = "<div class='option1'>Чтобы экспортировать нужный Skin Pack, просто нажмите на ссылку Экспорт рядом с соответствующей шкурой.</div>";
 		}
 
 		#=============================
@@ -181,7 +181,7 @@ class ad_skin {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this skin pack?') )
+								if ( confirm('Вы действительно хотите удалить этот Skin Pack?') )
 								{
 									return true;
 								}
@@ -193,18 +193,18 @@ class ad_skin {
 
 						</script>
 						{$error}
-						<div class='groupbox'>Skin List</div>
+						<div class='groupbox'>Список шкур</div>
 						{$add_txt}
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<th width='34%' align='left'>Name</th>
-							<th width='10%'>Default</th>
+							<th width='34%' align='left'>Название</th>
+							<th width='10%'>Выбор основной шкуры</th>
 							<th width='7%'>CSS</th>
-							<th width='11%'>Wrapper</th>
-							<th width='13%'>Templates</th>
-							<th width='9%'>Export</th>
-							<th width='7%'>Properties</th>
-							<th width='9%'>Delete</th>
+							<th width='11%'>Структура сайта (Wrapper)</th>
+							<th width='13%'>Шаблоны</th>
+							<th width='9%'>Экспорт</th>
+							<th width='7%'>Свойства</th>
+							<th width='9%'>Удалить</th>
 						</tr>
 						". $skin_rows ."
 						</table>";
@@ -212,12 +212,12 @@ class ad_skin {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
-						   "List Skins",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
+						   "Список шкур",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -298,7 +298,7 @@ class ad_skin {
 
 							function sure_delete()
 							{
-								if ( confirm('Are you sure you want to delete this template?') )
+								if ( confirm('Вы действительно хотите удалить этот шаблон?') )
 								{
 									return true;
 								}
@@ -309,10 +309,10 @@ class ad_skin {
 							}
 
 						</script>
-						<div class='groupbox'>Template List</div>
+						<div class='groupbox'>Список шаблонов</div>
 						<table width='100%' cellpadding='3' cellspacing='1' class='smtable'>
 						<tr>
-							<th align='left'>File Name (Click to Edit)</th>
+							<th align='left'>Имя файла (Кликните для редактирования)</th>
 						</tr>
 						". $skin_rows ."
 						</table>";
@@ -320,13 +320,13 @@ class ad_skin {
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
 						   $s['name'],
-						   "List Templates",
+						   "Список шаблонов",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -391,46 +391,46 @@ class ad_skin {
 		}
 
 		$this->output = "{$error}
-						<div class='groupbox'>Edit Properties</div>
+						<div class='groupbox'>Редактировать свойства</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=doprop&amp;id={$s['id']}' method='post'>
 						<table width='100%' cellpadding='0' cellspacing='0'>
 						<tr>
-							<td class='option1' width='20%'><label for='name'>Name</label></td>
+							<td class='option1' width='20%'><label for='name'>Название</label></td>
 							<td class='option1' width='80%'><input type='text' name='name' id='name' value='{$name}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2'><label for='img_dir'>Image Directory</label></td>
+							<td class='option2'><label for='img_dir'>Директория с изображениями</label></td>
 							<td class='option2'><input type='text' name='img_dir' id='img_dir' value='{$img_dir}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option1'><label for='author'>Author</label></td>
+							<td class='option1'><label for='author'>Автор</label></td>
 							<td class='option1'><input type='text' name='author' id='author' value='{$author}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2'><label for='author_email'>Author Email</label></td>
+							<td class='option2'><label for='author_email'>E-mail автора</label></td>
 							<td class='option2'><input type='text' name='author_email' id='author_email' value='{$author_email}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option1'><label for='author_web'>Author Website</label></td>
+							<td class='option1'><label for='author_web'>Веб-сайт автора</label></td>
 							<td class='option1'><input type='text' name='author_web' id='author_web' value='{$author_web}' size='35' /></td>
 						</tr>
 						<tr>
-							<td class='option2' valign='top'><label for='notes'>Notes</label></td>
+							<td class='option2' valign='top'><label for='notes'>Примечания</label></td>
 							<td class='option2'><textarea name='notes' id='notes' cols='45' rows='3'>{$notes}</textarea></td>
 						</tr>
 						</table>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Properties' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
-						   "Edit Properties",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
+						   "Редактировать свойства",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -475,25 +475,25 @@ class ad_skin {
 
 		if ( ! is_writable( HD_PATH .'skin/s'. $s['id'] .'/style.css' ) )
 		{
-			$write_warning = "<div class='alert'>Warning: ./skin/s{$s['id']}/style.css is not writable.  Please CHMOD to 0777.</div>";
+			$write_warning = "<div class='alert'>Внимание: ./skin/s{$s['id']}/style.css недоступен для записи. Пожалуйста, измените CHMOD на 0777.</div>";
 		}
 
 		$this->output = "{$write_warning}
-						<div class='groupbox'>Edit CSS</div>
+						<div class='groupbox'>Редактировать CSS</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=docss&amp;id={$s['id']}' method='post'>
 						<div class='option1'><textarea name='css' id='css' rows='20' cols='120' style='width: 98%; height: 400px;'>{$css}</textarea></div>
-						<div class='formtail'><input type='submit' id='edit' value='Edit CSS' class='button' /></div>
+						<div class='formtail'><input type='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
-						   "Edit CSS",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
+						   "Редактировать CSS",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -538,7 +538,7 @@ class ad_skin {
 
 		if ( ! is_writable( HD_PATH .'skin/s'. $s['id'] .'/wrapper.tpl' ) )
 		{
-			$write_warning = "<p class='errortxt'>Warning: ./skin/s{$s['id']}/wrapper.tpl is not writable.  Please CHMOD to 0777.</p>";
+			$write_warning = "<p class='errortxt'>Внимание: ./skin/s{$s['id']}/wrapper.tpl недоступен для записи. Пожалуйста, измените CHMOD на 0777.</p>";
 		}
 
 		#=============================
@@ -546,22 +546,22 @@ class ad_skin {
 		#=============================
 
 		$this->output = "{$write_warning}
-						<div class='groupbox'>Edit Wrapper</div>
+						<div class='groupbox'>Редактировать структуру сайта (Wrapper)</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=dowrapper&amp;id={$s['id']}' method='post'>
 						<div class='option1'><textarea name='wrapper' id='wrapper' rows='20' cols='120' style='width: 98%; height: 400px;'>{$file_contents}</textarea></div>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Wrapper' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
 						   $s['name'],
 						   "Edit Wrappers",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -615,7 +615,7 @@ class ad_skin {
 
 		if ( ! is_writable( HD_PATH .'skin/s'. $s['id'] .'/'. $this->ifthd->input['file'] .'.tpl' ) )
 		{
-			$write_warning = "<div class='alert'>Warning: ./skin/s". $s['id'] ."/". $this->ifthd->input['file'] .".tpl is not writable.  Please CHMOD to 0777.</div>";
+			$write_warning = "<div class='alert'>Внимание: ./skin/s". $s['id'] ."/". $this->ifthd->input['file'] .".tpl недоступен для записи. Пожалуйста, измените CHMOD на 0777.</div>";
 		}
 
 		if ( $error )
@@ -631,22 +631,22 @@ class ad_skin {
 
 		$this->output = "{$error}
 						{$write_warning}
-						<div class='groupbox'>Editing Template: {$this->ifthd->input['file']}.tpl</div>
+						<div class='groupbox'>Редактирование шаблона: {$this->ifthd->input['file']}.tpl</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=doedittpl&amp;id={$s['id']}&amp;file={$this->ifthd->input['file']}' method='post'>
 						<div class='option1'><textarea name='template' id='template' rows='20' cols='120' style='width: 98%; height: 400px;'>{$file_contents}</textarea></div>
-						<div class='formtail'><input type='submit' name='submit' id='edit' value='Edit Template' class='button' /></div>
+						<div class='formtail'><input type='submit' name='submit' id='edit' value='Принять изменения' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
 						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=templates&amp;id={$s['id']}'>{$s['name']}</a>",
-						   "Edit Template",
+						   "Редактировать шаблон",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -716,14 +716,14 @@ class ad_skin {
 
 		$this->ifthd->rebuild_skin_cache();
 
-		$this->ifthd->log( 'admin', "Skin Properites Updated &#039;". $s['name'] ."&#039;" );
+		$this->ifthd->log( 'admin', "Свойства шкуры обновлены &#039;". $s['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin', 'prop_skin_success' );
-		$this->list_skins( '', 'The skin information has been successfully updated.' );
+		$this->list_skins( '', 'Информация шкуры успешно обновлена.' );
 	}
 
 	#=======================================
@@ -778,14 +778,14 @@ class ad_skin {
 
 		@fclose($handle);
 
-		$this->ifthd->log( 'admin', "Skin CSS Updated &#039;". $s['name'] ."&#039;" );
+		$this->ifthd->log( 'admin', "CSS шкуры обновлено &#039;". $s['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin', 'css_skin_success' );
-		$this->list_skins( '', 'The skin CSS has been successfully updated.' );
+		$this->list_skins( '', 'CSS шкуры успешно обновлена.' );
 	}
 
 	#=======================================
@@ -846,14 +846,14 @@ class ad_skin {
 
 		@fclose($handle);
 
-		$this->ifthd->log( 'admin', "Skin Wrapper Updated &#039;". $s['name'] ."&#039;" );
+		$this->ifthd->log( 'admin', "Структура сайта для шкуры, обновлена &#039;". $s['name'] ."&#039;" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin', 'wrapper_skin_success' );
-		$this->list_skins( '', 'The wrapper information has been successfully updated.' );
+		$this->list_skins( '', 'Информация структуры сайта, успешно обновлена.' );
 	}
 
 	#=======================================
@@ -914,14 +914,14 @@ class ad_skin {
 
 		@fclose($handle);
 
-		$this->ifthd->log( 'admin', "Skin Template Edited &#039;". $this->ifthd->input['file'] .".tpl&#039;", 0, $s['id'] );
+		$this->ifthd->log( 'admin', "Шаблон шкуры отредактирован &#039;". $this->ifthd->input['file'] .".tpl&#039;", 0, $s['id'] );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin&code=templates&id='. $s['id'], 'template_skin_success' );
-		$this->list_skins( '', 'The skin template has been successfully updated.' );
+		$this->list_skins( '', 'Шаблон шкуры успешно обновлен.' );
 	}
 
 	#=======================================
@@ -946,7 +946,7 @@ class ad_skin {
 
 		if ( ! is_writable( HD_PATH .'skin/' ) )
 		{
-			$write_warning = "<p class='errortxt'>Warning: ./skin/ is not writable.  Please CHMOD to 0777.</p>";
+			$write_warning = "<p class='errortxt'>Внимание: ./skin/ недоступен для записи. Пожалуйста, измените CHMOD на 0777.</p>";
 		}
 
 		$this->output = "<script type='text/javascript'>
@@ -955,7 +955,7 @@ class ad_skin {
 							{
 								if ( ! form.skin_file.value )
 								{
-									alert('Please select a file to upload.');
+									alert('Пожалуйста, выберите файл для загрузки.');
 									form.skin_file.focus();
 									return false;
 								}
@@ -963,22 +963,22 @@ class ad_skin {
 
 						</script>
 						{$write_warning}
-						<div class='groupbox'>Import a Skin</div>
-						<div class='subbox'>Please select a valid Trellis Desk XML Skin File to import.</div>
+						<div class='groupbox'>Импортировать шкуру</div>
+						<div class='subbox'>Пожалуйста, выберите файл шкуры для импорта, соответствующий страндарту Trellis Desk XML.</div>
 						<form enctype='multipart/form-data' action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=doimport' method='post' onsubmit='return validate_form(this)'>
 						<div class='option1'><input type='file' name='skin_file' id='skin_file' size='40' /></div>
-						<div class='formtail'><input type='submit' name='upload' id='upload' value='Import' class='button' /></div>
+						<div class='formtail'><input type='submit' name='upload' id='upload' value='Импортировать' class='button' /></div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
 						   "Import Skin",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -999,22 +999,22 @@ class ad_skin {
 
 		$skin_drop = $this->ifthd->build_skin_drop();
 
-		$this->output = "<div class='groupbox'>Skin Tools</div>
+		$this->output = "<div class='groupbox'>Инструменты для шкур</div>
 						<form action='<! HD_URL !>/admin.php?section=look&amp;act=skin&amp;code=dotools' method='post'>
-						<div class='option1'>Switch ALL users to skin: <select name='all_skin' id='all_skin'>{$skin_drop}</select> <input type='submit' class='submit' name='all_users' id='all_users' value='Switch' /></div>
-						<div class='option2'>Users using skin <select name='first_skin' id='first_skin'>{$skin_drop}</select> switch to <select name='sec_skin' id='sec_skin'>{$skin_drop}</select> <input type='submit' class='submit' name='some_users' id='some_users' value='Switch' /></div>
-						<div class='option1'><input type='submit' class='submit' name='chmod' id='chmod' value='Set Skin File Permissions' /> (CHMODs to 0777 for outside editing)</div>
+						<div class='option1'>Установить всем пользователям шкуру: <select name='all_skin' id='all_skin'>{$skin_drop}</select> <input type='submit' class='submit' name='all_users' id='all_users' value='Установить' /></div>
+						<div class='option2'>Для пользователей использующих шкуру <select name='first_skin' id='first_skin'>{$skin_drop}</select> изменить на <select name='sec_skin' id='sec_skin'>{$skin_drop}</select> <input type='submit' class='submit' name='some_users' id='some_users' value='Установить' /></div>
+						<div class='option1'><input type='submit' class='submit' name='chmod' id='chmod' value='Установить разрешения для файлов шкуры' /> (Устанавливается CHMODs в 0777, для возможности редактировать шаблоны и файлы через HelpDesk)</div>
 						</form>";
 
 		$this->ifthd->skin->add_output( $this->output );
 
 		$this->nav = array(
-						   "<a href='<! HD_URL !>/admin.php?section=look'>Look &amp; Feel</a>",
-						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Skins</a>",
-						   "Skin Tools",
+						   "<a href='<! HD_URL !>/admin.php?section=look'>Оформление и языки</a>",
+						   "<a href='<! HD_URL !>/admin.php?section=look&amp;act=skin'>Шкуры</a>",
+						   "Инструменты для шкур",
 						   );
 
-		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Manage Skins' ) );
+		$this->ifthd->skin->do_output( array( 'nav' => $this->nav, 'title' => 'Управление шкурами' ) );
 	}
 
 	#=======================================
@@ -1155,7 +1155,7 @@ class ad_skin {
 			@fclose($handleb);
 		}
 
-		$this->ifthd->log( 'admin', "Skin Pack &#039;". $sinfo['sk_name'] ."&#039; Imported" );
+		$this->ifthd->log( 'admin', "Skin Pack &#039;". $sinfo['sk_name'] ."&#039; Импортирован" );
 
 		#=============================
 		# Files
@@ -1174,7 +1174,7 @@ class ad_skin {
 		#=============================
 
 		$this->ifthd->skin->redirect( '?section=look&act=skin', 'import_skin_success' );
-		$this->list_skins( '', 'The skin has been successfully imported.' );
+		$this->list_skins( '', 'Шкура успешно импортирована.' );
 	}
 
 	#=======================================
@@ -1312,7 +1312,7 @@ class ad_skin {
 
 		$file_data .= "\t</skin_images>\n";
 
-		$this->ifthd->log( 'admin', "Skin Pack &#039;". $s['name'] ."&#039; Exported" );
+		$this->ifthd->log( 'admin', "Skin Pack &#039;". $s['name'] ."&#039; Экспортирован" );
 
 		$file_data .= "</skin_pack>";
 
@@ -1406,7 +1406,7 @@ class ad_skin {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin', 'delete_skin_success' );
-		$this->list_skins( 'The skin information has been successfully deleted.' );
+		$this->list_skins( 'Информация о шкуре успешно удалена.' );
 	}
 
 	#=======================================
@@ -1486,14 +1486,14 @@ class ad_skin {
 
 		$this->ifthd->rebuild_skin_cache();
 
-		$this->ifthd->log( 'admin', "Skin Set &#039;". $s['name'] ."&#039; Set as Default" );
+		$this->ifthd->log( 'admin', "Шкура &#039;". $s['name'] ."&#039; установлена как основная" );
 
 		#=============================
 		# Redirect
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin', 'default_skin_success' );
-		$this->list_skins( '', 'The skin has been successfully set to default.' );
+		$this->list_skins( '', 'Шкура успешно выбрана как основная.' );
 	}
 
 	#=======================================
@@ -1564,7 +1564,7 @@ class ad_skin {
 		#=============================
 
 		#$this->ifthd->skin->redirect( '?section=look&act=skin&code=tools', 'switch_skin_success' );
-		$this->list_skins( '', 'The skin tools have been successfully run.' );
+		$this->list_skins( '', 'Инструмент для шкуры успешно выполнил задачу.' );
 	}
 
 	#=======================================

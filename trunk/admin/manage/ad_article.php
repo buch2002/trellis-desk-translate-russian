@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -843,7 +851,7 @@ class ad_article {
 						</tr>
 						". $article_rows ."
 						</table>
-						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=add' class='fake_button'>Add A New Article</a></div></div>
+						<div class='formtail'><div class='fb_pad'><a href='<! HD_URL !>/admin.php?section=manage&amp;act=kb&amp;code=add' class='fake_button'>Добавить новую статью</a></div></div>
 						{$page_links}";
 
 		$this->ifthd->skin->add_output( $this->output );
@@ -949,7 +957,7 @@ class ad_article {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Это будет отображаться под названием статьи на странице со списком статей.
@@ -970,7 +978,7 @@ class ad_article {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Эти ключевые слова будут использоваться при поиске, для улучшения результатов поиска. Ключевые слова должны разделяться запятой.
@@ -1138,7 +1146,7 @@ class ad_article {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info1','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info1' style='display: none;'>
 										<div>
 											Это будет отображаться под названием статьи на странице со списком статей.
@@ -1159,7 +1167,7 @@ class ad_article {
 			$this->output .= "<tr>
 								<td colspan='2'>									
 									<div class='infopop'>
-										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Toggle information</a>
+										<a onclick=\"javascript:Effect.toggle('info2','blind',{duration: 0.5});\" class='fake_link'><img src='<! IMG_DIR !>/toggle.gif' alt='+' /> Дополнительная информация</a>
 										<div id='info2' style='display: none;'>
 										<div>
 											Эти ключевые слова будут использоваться при поиске, для улучшения результатов поиска. Ключевые слова должны разделяться запятой.
