@@ -2,13 +2,21 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    | Trellis Desk Language File
 |    | lang_email_content.php
 #======================================================
 */
 
 $lang['header'] = <<<EOF
-Ув. <#MEM_NAME#>,
+Добрый день, <#MEM_NAME#>,
 EOF;
 
 $lang['footer'] = <<<EOF
@@ -89,10 +97,10 @@ $lang['acc_almost_approved'] = <<<EOF
 Your account has been successfully approved by an administrator.  But before you can begin using your account, you must first click the validation link in the email that has been dispatched to your email address.
 EOF;
 
-$lang['new_ticket_sub'] = "Тикет ID #<#TICKET_ID#>";
+$lang['new_ticket_sub'] = "[Ticket#<#TICKET_ID#>] Ваше сообщение получено и принято в обработку";
 
 $lang['new_ticket'] = <<<EOF
-You have submitted a new ticket.  Our staff will review the ticket shortly and reply accordingly.  Below are the ticket details.
+Ваше сообщение получено и принято в обработку.Нет необходимости отвечать на это письмо. Вашему запросу присвоен номер <#TICKET_ID#>Пожалуйста не исключайте его из темы любого Вашего письма нам по данному вопросу.Для уточнений и дополнений к Вашему запросу, не открывайте новый запрос, а отвечайте на данное сообщение.
 
 ---------------------------
 
