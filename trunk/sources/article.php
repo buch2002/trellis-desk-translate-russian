@@ -2,6 +2,14 @@
 
 /*
 #======================================================
+|	Актуальный русский перевод находится здесь:
+|	http://code.google.com/p/trellis-desk-translate-russian/
+|	Следите за обновлениями.
+|	Перевод предоставлен "as is",
+|	сделан для своих нужд и не притендует на
+|	авторские права и права третих лиц.
+|	Оригинальные права принадлежат только их владельцам.
+#======================================================
 |    Trellis Desk
 |    =====================================
 |    By DJ Tarazona (dj@accord5.com)
@@ -40,7 +48,7 @@ class article {
 
 		if ( ! $this->ifthd->member['g_kb_access'] || $this->ifthd->member['ban_kb'] )
 		{
-			$this->ifthd->log( 'security', "Blocked Access Knowledge Base" );
+			$this->ifthd->log( 'security', "Заблокирован доступ к базе знаний" );
 
 			$this->ifthd->skin->error('banned_kb');
 		}
@@ -108,7 +116,7 @@ class article {
 
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'error', "Article Not Found ID: ". $this->ifthd->input['id'] );
+			$this->ifthd->log( 'error', "Статья не найдена ID: ". $this->ifthd->input['id'] );
 
 			$this->ifthd->skin->error('no_article');
 		}
@@ -278,7 +286,7 @@ class article {
 
 		if ( ! $this->ifthd->member['g_kb_comment'] || $this->ifthd->member['ban_kb_comment'] )
 		{
-			$this->ifthd->log( 'security', "Blocked Article Comment" );
+			$this->ifthd->log( 'security', "Заблокированные cтатьи и комментарии" );
 
 			$this->ifthd->skin->error('banned_kb_comment');
 		}
@@ -294,7 +302,7 @@ class article {
 
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'error', "Article Not Found ID: ". $this->ifthd->input['id'] );
+			$this->ifthd->log( 'error', "Статья не найдена ID: ". $this->ifthd->input['id'] );
 
 			$this->ifthd->skin->error('no_article');
 		}
@@ -303,14 +311,14 @@ class article {
 
 		if ( ! $this->ifthd->member['id'] )
 		{
-			$this->ifthd->log( 'security', "Comment Blocked From Guest &#039;". $a['name'] ."&#039;", 1, $a['id'] );
+			$this->ifthd->log( 'security', "Заблокированные комментарии от Гостей &#039;". $a['name'] ."&#039;", 1, $a['id'] );
 
 			$this->ifthd->skin->error( 'must_be_user', 1 );
 		}
 
 		if ( $a['dis_comments'] )
 		{
-			$this->ifthd->log( 'security', "Blocked Article Comment" );
+			$this->ifthd->log( 'security', "Заблокированные cтатьи и комментарии" );
 
 			$this->ifthd->skin->error('banned_kb_comment');
 		}
@@ -342,7 +350,7 @@ class article {
 
 		$comment_id = $this->ifthd->core->db->get_insert_id();
 
-		$this->ifthd->log( 'member', "Article Comment Added &#039;". $a['name'] ."&#039;", 1, $a['id'] );
+		$this->ifthd->log( 'member', "Комментарий к статье добавлен &#039;". $a['name'] ."&#039;", 1, $a['id'] );
 
 		#=============================
 		# Update Article
@@ -617,7 +625,7 @@ class article {
 
 		if ( ! $this->ifthd->core->db->get_num_rows() )
 		{
-			$this->ifthd->log( 'error', "Article Not Found ID: ". $this->ifthd->input['id'] );
+			$this->ifthd->log( 'error', "Статья не найдена ID: ". $this->ifthd->input['id'] );
 
 			$this->ifthd->skin->error('no_article');
 		}
